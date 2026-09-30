@@ -1,0 +1,52 @@
+{
+  "scope": "Recheck prior acquisition bytes, not edition authentication",
+  "manifest_sha256": "7ee53790984c00c63b7efb15baf789396a8d1906118e1ed8818effcf4748b744",
+  "checks": [
+    {
+      "label": "newman-ch5",
+      "raw_pin_matches": true,
+      "text_pin_matches": true
+    },
+    {
+      "label": "newman-editions",
+      "raw_pin_matches": true,
+      "text_pin_matches": true
+    },
+    {
+      "label": "ccc-dossier",
+      "raw_pin_matches": true,
+      "text_pin_matches": true
+    },
+    {
+      "label": "dei-verbum",
+      "raw_pin_matches": true,
+      "text_pin_matches": true
+    },
+    {
+      "label": "dignitatis-humanae",
+      "raw_pin_matches": true,
+      "text_pin_matches": true
+    },
+    {
+      "label": "roman-catechism-fordham",
+      "raw_pin_matches": true,
+      "text_pin_matches": true
+    },
+    {
+      "label": "ccc-revision-2018",
+      "raw_pin_matches": true,
+      "text_pin_matches": true
+    },
+    {
+      "label": "laetamur",
+      "raw_pin_matches": true,
+      "text_pin_matches": true
+    },
+    {
+      "label": "fidei-depositum",
+      "raw_pin_matches": true,
+      "text_pin_matches": true
+    }
+  ],
+  "all_pins_match": true
+}

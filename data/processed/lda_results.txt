@@ -1,0 +1,13 @@
+=== LATENT SOURCES DISCOVERED (Top 10 Greek Lemmas) ===
+Source 1: σαδδουκαῖος, βάπτισμα, φαρισαῖος, τέκνον, κεῖμαι, ἄξιος, μετάνοια, ἀξίνη, φεύγω, ἐκκόπτω
+Source 2: καί, αὐτός, λέγω, δέ, εἰμί, ἐν, εἰς, σύ, ἐγώ, οὐ
+Source 3: καί, αὐτός, ἐγώ, ἐν, σύ, εἰμί, κύριος, λέγω, οὗτος, ἐπί
+Source 4: σαδδουκαῖος, βάπτισμα, φαρισαῖος, τέκνον, κεῖμαι, ἄξιος, μετάνοια, ἀξίνη, φεύγω, ἐκκόπτω
+
+=== PROBABILISTIC SOURCE MIXTURE PER PERICOPE ===
+Pericope 1 draws heavily from Source 3 (Probability: 99.9%)
+Pericope 2 draws heavily from Source 2 (Probability: 99.4%)
+Pericope 3 draws heavily from Source 2 (Probability: 99.5%)
+Pericope 4 draws heavily from Source 2 (Probability: 99.9%)
+Pericope 5 draws heavily from Source 2 (Probability: 100.0%)
+Pericope 6 draws heavily from Source 2 (Probability: 99.9%)

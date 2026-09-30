@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://newmanreader.org/works/development/chapter5.html",
+      "title": "Newman Reader - Development of Christian Doctrine - Chapter 5",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 2,
+      "url": "https://newmanreader.org/works/development",
+      "title": "Newman Reader - Development of Christian Doctrine",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 3,
+      "url": "https://archive.org/details/OnTheDevelopmentOfChristianDoctrine1845",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 4,
+      "url": "https://digitalcollections.newmanstudies.org/document/bt21_n5_1845/an_essay_on_the_development_of_christian_doctrine/1845-00-00",
+      "title": "An Essay on the Development of Christian Doctrine",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 5,
+      "url": "https://newmanreader.org/works/development/chapter7.html",
+      "title": "Newman Reader - Development of Christian Doctrine - Chapter 7",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 6,
+      "url": "https://newmanreader.org/works/development/chapter9.html",
+      "title": "Newman Reader - Development of Christian Doctrine - Chapter 9",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 7,
+      "url": "https://newmanreader.org/works/development/chapter11.html",
+      "title": "Newman Reader - Development of Christian Doctrine - Chapter 11",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 8,
+      "url": "https://archive.org/metadata/OnTheDevelopmentOfChristianDoctrine1845",
+      "title": "ia-1845-metadata",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 9,
+      "url": "https://newmanreader.org/works/development/chapter6-1.html",
+      "title": "Newman Reader - Development of Christian Doctrine - Chapter 6.1",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 10,
+      "url": "https://ia600401.us.archive.org/23/items/OnTheDevelopmentOfChristianDoctrine1845/OnTheDevelopmentOfChristianDoctrine1845.pdf",
+      "title": "ia-1845-pdf",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 11,
+      "url": "https://ia800401.us.archive.org/23/items/OnTheDevelopmentOfChristianDoctrine1845/OnTheDevelopmentOfChristianDoctrine1845_djvu.txt",
+      "title": "ia-1845-ocr",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 12,
+      "url": "https://iiif.newmanstudies.org/iiif/2/publications%2FBT21_N5_1845%2FBT21_N5_1845_i.jp2/full/1600,/0/default.jpg",
+      "title": "nins-1845-title",
+      "accessed": "2026-09-19"
+    }
+  ]
+}

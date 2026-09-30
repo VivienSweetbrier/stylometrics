@@ -1,0 +1,8 @@
+streamlit
+pandas
+plotly
+sentence-transformers
+scikit-learn
+redis
+boto3
+umap-learn

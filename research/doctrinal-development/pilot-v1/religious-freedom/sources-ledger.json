@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html",
+      "title": "Dignitatis humanae",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 2,
+      "url": "https://sourcebooks.fordham.edu/mod/romancat.asp",
+      "title": "Internet History Sourcebooks: Modern History",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 3,
+      "url": "https://www.vatican.va/content/pius-ix/la.html",
+      "title": "Pius IX",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 4,
+      "url": "https://www.papalencyclicals.net/pius09/p9quanta.htm",
+      "title": "Quanta Cura - Papal Encyclicals",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 5,
+      "url": "https://www.papalencyclicals.net/pius09/p9syll.htm",
+      "title": "The Syllabus Of Errors - Papal Encyclicals",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 6,
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_lt.html",
+      "title": "Dignitatis Humanae",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 7,
+      "url": "https://www.vatican.va/archive/ENG0015/__P7B.HTM",
+      "title": "Catechism of the Catholic Church - IntraText",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 8,
+      "url": "https://www.vatican.va/archive/catechism_lt/p3s2c1a1_lt.htm",
+      "title": "Catechismus Catholicae Ecclesiae - Primum praeceptum",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 9,
+      "url": "https://www.vatican.va/archive/ENG0015/__PX.HTM",
+      "title": "Catechism of the Catholic Church - IntraText",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 10,
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html",
+      "title": "Immortale Dei (November 1, 1885)",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 11,
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+      "title": "Libertas (June 20, 1888)",
+      "accessed": "2026-09-19"
+    }
+  ]
+}

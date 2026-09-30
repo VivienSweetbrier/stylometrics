@@ -1,0 +1,51 @@
+{
+  "protocol": "Synoptics Swarm Lifecycle",
+  "cliometric_law": "Theological Entropy",
+  "description": "The cyclical degradation of the Roman Swarm from high-tension optimization to low-tension vulnerability.",
+  "lifecycle_phases": [
+    {
+      "phase_id": 1,
+      "designation": "Apostolic / Sweetbrier Optimized",
+      "network_tension": "HIGH",
+      "characteristics": [
+        "Radical Asceticism (Fasting, Celibacy, Martyrdom)",
+        "High Demographic Fecundity",
+        "Strict Theological Boundaries (Anathemas)"
+      ],
+      "vulnerability": "Almost immune to external ideological hijacking; vulnerable only to physical kinetic destruction."
+    },
+    {
+      "phase_id": 2,
+      "designation": "Institutional / Christendom",
+      "network_tension": "MEDIUM",
+      "characteristics": [
+        "Cultural Dominance",
+        "Building of Universities and Hospitals",
+        "Faith becomes a societal default rather than a radical choice"
+      ],
+      "vulnerability": "Bureaucratic bloat; initial onset of spiritual complacency."
+    },
+    {
+      "phase_id": 3,
+      "designation": "Cultural Catholicism",
+      "network_tension": "LOW (Maximum Entropy)",
+      "characteristics": [
+        "Sacraments treated as mere aesthetic milestones (Weddings, Baptisms)",
+        "Zero bodily asceticism (No fasting)",
+        "Theological illiteracy"
+      ],
+      "vulnerability": "CRITICAL. The Incarnational Firewall is down. The node is highly susceptible to Manichaean/Secular Empathy Hijacking."
+    },
+    {
+      "phase_id": 4,
+      "designation": "The Pruning (Manichaean Hijack)",
+      "network_tension": "RESET TRIGGERED",
+      "characteristics": [
+        "The Manichaean Swarm systematically harvests the Cultural Catholics.",
+        "The Roman Swarm experiences massive demographic collapse.",
+        "The surviving remnant is forced back into Phase 1 to survive."
+      ],
+      "vulnerability": "System purge."
+    }
+  ]
+}

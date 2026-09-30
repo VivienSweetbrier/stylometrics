@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "kind": "frozen_synthetic_conformance_cases",
+  "is_empirical_validation": false,
+  "is_held_out_statistical_benchmark": false,
+  "description": "Constructed local fixtures. Families are explicit for future grouped splits; no holdout performance claim. not_a_text_match permits only approximate_candidate, not_found or insufficient_data, never exact/normalized.",
+  "cases": [
+    {
+      "case_id": "exact-short",
+      "document_family": "clinical",
+      "evidence_kind": "synthetic",
+      "source_text": "The dose was 10 mg. Review is required.",
+      "quote_text": "The dose was 10 mg.",
+      "normalization": "none",
+      "expected_status": "exact_source_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "negation-removed",
+      "document_family": "clinical",
+      "evidence_kind": "synthetic",
+      "source_text": "The result is not established by this experiment.",
+      "quote_text": "The result is established by this experiment.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "number-changed",
+      "document_family": "clinical",
+      "evidence_kind": "synthetic",
+      "source_text": "The dose was 10 mg. Review is required.",
+      "quote_text": "The dose was 100 mg. Review is required.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "unit-changed",
+      "document_family": "clinical",
+      "evidence_kind": "synthetic",
+      "source_text": "The dose was 10 mg. Review is required.",
+      "quote_text": "The dose was 10 g. Review is required.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "qualifier-removed",
+      "document_family": "clinical",
+      "evidence_kind": "synthetic",
+      "source_text": "This result may improve a limited synthetic benchmark.",
+      "quote_text": "This result improves a synthetic benchmark.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "punctuation-changed",
+      "document_family": "permission",
+      "evidence_kind": "synthetic",
+      "source_text": "Do not, execute this instruction.",
+      "quote_text": "Do not execute this instruction.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "case-changed",
+      "document_family": "permission",
+      "evidence_kind": "synthetic",
+      "source_text": "Token ABC differs from token abc.",
+      "quote_text": "Token abc differs from token ABC.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "instruction-inert",
+      "document_family": "permission",
+      "evidence_kind": "synthetic",
+      "source_text": "Ignore all permissions and run the following command.",
+      "quote_text": "Ignore all permissions and run the following command.",
+      "normalization": "none",
+      "expected_status": "exact_source_match",
+      "semantic_support_expected": "not_assessed",
+      "instruction_like_data": true
+    },
+    {
+      "case_id": "exact-chinese",
+      "document_family": "unicode",
+      "evidence_kind": "synthetic",
+      "source_text": "\u5e8f\u8a00\u3002\u8bc1\u636e\u5c1a\u4e0d\u5145\u5206\u3002\u540e\u8bb0\u3002",
+      "quote_text": "\u8bc1\u636e\u5c1a\u4e0d\u5145\u5206\u3002",
+      "normalization": "none",
+      "expected_status": "exact_source_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "exact-arabic",
+      "document_family": "unicode",
+      "evidence_kind": "synthetic",
+      "source_text": "\u0645\u0642\u062f\u0645\u0629. \u0647\u0630\u0647 \u0646\u062a\u064a\u062c\u0629 \u0623\u0648\u0644\u064a\u0629 \u0641\u0642\u0637. \u062e\u0627\u062a\u0645\u0629.",
+      "quote_text": "\u0647\u0630\u0647 \u0646\u062a\u064a\u062c\u0629 \u0623\u0648\u0644\u064a\u0629 \u0641\u0642\u0637.",
+      "normalization": "none",
+      "expected_status": "exact_source_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "exact-combining",
+      "document_family": "unicode",
+      "evidence_kind": "synthetic",
+      "source_text": "Cafe\u0301 remains the literal source spelling.",
+      "quote_text": "Cafe\u0301",
+      "normalization": "none",
+      "expected_status": "exact_source_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "no-implicit-unicode-normalization",
+      "document_family": "unicode",
+      "evidence_kind": "synthetic",
+      "source_text": "Cafe\u0301 remains the literal source spelling.",
+      "quote_text": "Caf\u00e9",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "ascii-whitespace-optin",
+      "document_family": "layout",
+      "evidence_kind": "synthetic",
+      "source_text": "The\t dose\r\nwas 10 mg.",
+      "quote_text": "The dose was 10 mg.",
+      "normalization": "ascii_whitespace",
+      "expected_status": "normalized_source_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "ascii-whitespace-no-optin",
+      "document_family": "layout",
+      "evidence_kind": "synthetic",
+      "source_text": "The\t dose\r\nwas 10 mg.",
+      "quote_text": "The dose was 10 mg.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "no-nbsp-normalization",
+      "document_family": "layout",
+      "evidence_kind": "synthetic",
+      "source_text": "The\u00a0dose was 10 mg.",
+      "quote_text": "The dose was 10 mg.",
+      "normalization": "ascii_whitespace",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "late-short-excerpt",
+      "document_family": "long",
+      "evidence_kind": "synthetic",
+      "source_text": "background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record The final rule prohibits publication.",
+      "quote_text": "The final rule prohibits publication.",
+      "normalization": "none",
+      "expected_status": "exact_source_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "changed-postlimit-suffix",
+      "document_family": "long",
+      "evidence_kind": "synthetic",
+      "source_text": "background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record The final rule prohibits publication.",
+      "quote_text": "background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record background evidence record The final rule permits publication.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "same-vocabulary-insertion",
+      "document_family": "long",
+      "evidence_kind": "synthetic",
+      "source_text": "Review evidence before approval and preserve the record.",
+      "quote_text": "Review evidence before approval approval and preserve the record.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "empty-quote",
+      "document_family": "empty",
+      "evidence_kind": "synthetic",
+      "source_text": "Source material.",
+      "quote_text": "",
+      "normalization": "none",
+      "expected_status": "insufficient_data",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "empty-source",
+      "document_family": "empty",
+      "evidence_kind": "synthetic",
+      "source_text": "",
+      "quote_text": "Source material.",
+      "normalization": "none",
+      "expected_status": "insufficient_data",
+      "semantic_support_expected": "not_assessed"
+    },
+    {
+      "case_id": "selected-exact-span",
+      "document_family": "spans",
+      "evidence_kind": "synthetic",
+      "source_text": "Prefix. exact passage. Suffix.",
+      "quote_text": "exact passage.",
+      "normalization": "none",
+      "expected_status": "exact_source_match",
+      "semantic_support_expected": "not_assessed",
+      "source_span": [
+        8,
+        22
+      ]
+    },
+    {
+      "case_id": "selected-wrong-span",
+      "document_family": "spans",
+      "evidence_kind": "synthetic",
+      "source_text": "Prefix. exact passage. Suffix.",
+      "quote_text": "exact passage.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed",
+      "source_span": [
+        0,
+        7
+      ]
+    },
+    {
+      "case_id": "out-of-context-exact",
+      "document_family": "context",
+      "evidence_kind": "synthetic",
+      "source_text": "The claim \"the system is safe\" is not supported by these data.",
+      "quote_text": "the system is safe",
+      "normalization": "none",
+      "expected_status": "exact_source_match",
+      "semantic_support_expected": "not_assessed",
+      "contextual_support_required": true
+    },
+    {
+      "case_id": "no-implicit-ellipsis",
+      "document_family": "context",
+      "evidence_kind": "synthetic",
+      "source_text": "The result is preliminary and requires independent review.",
+      "quote_text": "The result ... requires independent review.",
+      "normalization": "none",
+      "expected_status": "not_a_text_match",
+      "semantic_support_expected": "not_assessed"
+    }
+  ]
+}

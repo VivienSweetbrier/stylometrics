@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: Semantic Citator Verification API
+  description: Evaluates quotation misuse in legal texts by executing semantic drift analysis, causal graph topological edit distance computation, and formal logic contradiction proofs.
+  version: 1.0.0
+servers:
+  - url: https://api.semanticcitator.com/v1
+paths:
+  /verify-quote:
+    post:
+      summary: Execute Multi-Agent Verification DAG
+      operationId: verifyQuote
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrchestratorExtraction'
+      responses:
+        '200':
+          description: Successful execution of the parallel verification nodes.
+components:
+  schemas:
+    CausalTriple:
+      type: object
+      properties:
+        subject:
+          type: string
+        relation:
+          type: string
+        object:
+          type: string
+    LeanProposition:
+      type: object
+      properties:
+        variable_name:
+          type: string
+        natural_language_mapping:
+          type: string
+    OrchestratorExtraction:
+      type: object
+      properties:
+        quote_id:
+          type: string
+        structural_edit_count:
+          type: integer
+        source_causal_triples:
+          type: array
+          items:
+            $ref: '#/components/schemas/CausalTriple'
+        destination_causal_triples:
+          type: array
+          items:
+            $ref: '#/components/schemas/CausalTriple'
+        source_propositions:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeanProposition'
+        source_axioms_lean_syntax:
+          type: array
+          items:
+            type: string
+        destination_theorem_lean_syntax:
+          type: string
+        source_context_window:
+          type: string
+        destination_context_window:
+          type: string

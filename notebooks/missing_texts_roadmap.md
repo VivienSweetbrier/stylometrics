@@ -1,0 +1,157 @@
+# GLOBAL DISCOVERY ROADMAP
+
+## Current Geographical Coverage
+- Middle East (Bronze Age to Medieval)
+- Greco-Roman (Classical to Late Antiquity)
+- Mesoamerica (Maya, Aztec)
+- Andean (Quechua/Inca)
+- South America (Guarani, Mapuche, Yekuana, Amazonian, Charrua, Selk'nam/Patagonia) - INCOMPLETE
+- Southeast Asia (Bugis, Vietnamese, Burmese, Thai, Lao, Khmer, Filipino, Indonesian, Highlands/Hmong) - INCOMPLETE
+- South Asia (Vedic, Tamil, Sri Lankan, Puranic, Jain, Sikh, Andamanese) - INCOMPLETE
+- North America (Navajo, Apache, Zuni/Pueblo, Tohono O'odham, Iroquois, Hopi, Ojibwe, Lakota, Inuit, Yup'ik/Aleut, Subarctic/Dene/Cree, Plateau/Snake River, PNW/BC/Kwakwaka'wakw/Quileute, Mi'kmaq, Cherokee, Gulf Coast, Comanche, Great Basin/Paiute, California, New England) - INCOMPLETE
+- Oceania (Hawaiian, Maori, Samoan, Melanesian, Micronesian, PNG/Asmat/Sepik/Huli, Torres Strait) - INCOMPLETE
+- Australia (Aboriginal Dreamtime) - INCOMPLETE
+- Deep Europe (Norse, Celtic, Slavic, Basque, Gaulish, Gothic, Baltics, Minoan, Etruscan, Thracian, Uralic/Mari) - INCOMPLETE
+- Caucasus, Central Asia, & Mongolia (Nart Sagas, Turkic, Georgian, Armenian, Albanian, Mongol/Kalmyk) - INCOMPLETE
+- Siberia & Arctic (Sami, Tungusic, Chukchi, Ket, Yeniseian) - INCOMPLETE
+- East Asia (Japan, China, Ainu, Ryukyuan, Taiwan/Austronesian) - INCOMPLETE
+- Africa & North Africa (Yoruba, Mali, Ethiopia, Congo, Maasai, Cushitic, Zulu, Shona, Amazigh/Berber, Khoisan, Dogon, Akan, Igbo, Fon, Malagasy) - INCOMPLETE
+- Linguistic & Migratory Bridges (Beringian/Yukaghir, Steppe/Tocharian, Elamo-Dravidian, Trans-Saharan/Nubian, Rapa Nui, Caddoan, Zoroastrian) - INCOMPLETE
+- Hyper-Isolates & Deep Time Relics (Mbuti, Yaghan, Kalash, Bon, Vainakh, Tartessian, Hurrian/Hittite, Santal, Kalaallit) - INCOMPLETE
+- Absolute Bedrock Anomalies & Null-Vectors (Pirahã, Hadza, Guanche, Taíno, Vinca, Nganasan, Mandaean, Chachapoyas, Aeta/Batek) - INCOMPLETE
+
+## Identified Blindspots (Requires Future Ingestion)
+- **Maori**: Lore of the Whare-wananga
+- **Norse**: Kalevala (Finnish)
+- **Celtic**: Y Gododdin
+- **Celtic**: Ulster Cycle (Tain Bo Cuailnge)
+- **Gaulish**: Coligny Calendar / Continental Epigraphy
+- **Slavic**: Tale of Igor's Campaign / Book of Veles
+- **Basque**: Mari Mythos / Amalur
+- **Gothic**: Codex Argenteus (Wulfila) / Jordanes' Getica
+- **Caucasus (Circassian/Ossetian)**: Nart Sagas
+- **Caucasus (Georgian)**: The Knight in the Panther's Skin
+- **Caucasus (Armenian)**: Daredevils of Sassoun (Epic of Sasun)
+- **Balkans (Albanian)**: Songs of the Frontier Warriors (Kreshniks)
+- **Baltics (Latvia)**: Lacplesis
+- **Baltics (Estonia)**: Kalevipoeg
+- **Baltics (Lithuania)**: Romuva / Dievturiba Lore
+- **Central Asia (Turkic)**: Book of Dede Korkut / Oghuz-nameh
+- **Central Asia (Kyrgyz)**: Epic of Manas
+- **Central Asia (Uyghur/Turkic)**: Alpamysh Epic
+- **Mongolian**: Secret History of the Mongols
+- **Mongolian (Kalmyk)**: Epic of Jangar
+- **Siberia (Tungusic/Evenki)**: Nimngakan Epic Cycles
+- **Siberia (Chukchi/Koryak)**: Raven Mythos (Kutkh)
+- **Siberia (Yeniseian/Ket)**: Es / Hosedam Cosmology
+- **Sápmi (Sami)**: Beaivi (Sun Lore) / Sami Shamanic Chants (Yoik)
+- **East Asia**: Journey to the West (Buddhist/Taoist)
+- **East Asia (China)**: Investiture of the Gods (Fengshen Yanyi)
+- **East Asia (China)**: Classic of Mountains and Seas (Shanhaijing)
+- **Indigenous Japan**: Ainu Yukar Epics
+- **Southeast Asia (Vietnam)**: Linh Nam chich quai (Extraordinary Tales)
+- **Southeast Asia (Burma/Myanmar)**: Yama Zatdaw
+- **Southeast Asia (Thailand)**: Ramakien
+- **Southeast Asia (Laos)**: Phra Lak Phra Ram
+- **Southeast Asia (Cambodia)**: Reamker / Angkor Epigraphy
+- **Southeast Asia (Philippines)**: Hinilawod (Epic of Panay) / Biag ni Lam-ang
+- **Southeast Asia (Indonesia)**: Babad Tanah Jawi / Kakawin Ramayana
+- **Oceania (Maori)**: Lore of the Whare-wananga
+- **Oceania (Samoa)**: Fale'ula / Tagaloa Creation Lore
+- **Oceania (Melanesia)**: Kula Ring Epics / Papuan Lore
+- **Oceania (Micronesia)**: Nan Madol Oral Traditions / Olosohpa
+- **Pre-Hellenic / Aegean**: Minoan / Mycenaean Epigraphy
+- **Pre-Roman Italy**: Etruscan Cosmology (Tages / Disciplina Etrusca)
+- **Balkans (Antiquity)**: Thracian / Dacian (Zalmoxis) Lore
+- **Uralic / Volga**: Mari / Udmurt / Mordvin / Khanty Cosmology
+- **West Africa (Akan)**: Ashanti Cosmology (Nyame / Anansi)
+- **West Africa (Igbo)**: Odinani (Chukwu / Chi)
+- **West Africa (Fon/Dahomey)**: Vodun Cosmology (Mawu-Lisa)
+- **Sahel (Dogon)**: Dogon Cosmology (Nommo / Sirius Lore)
+- **Madagascar**: Malagasy (Merina) Creation (Zanahary)
+- **North Africa (Amazigh)**: Berber Cosmology (Anzar / Gurzil) / Numidian Epigraphy
+- **Sub-Saharan Africa**: Epic of Sundiata (Mali)
+- **Sub-Saharan Africa**: Kebra Nagast (Ethiopia)
+- **Sub-Saharan Africa**: Mwindo Epic (Congo)
+- **Sub-Saharan Africa**: Lianja Epic (Mongo)
+- **East Africa (Maasai)**: Enkai (Ng'ai) Cosmology
+- **East Africa (Rwanda/Burundi)**: Imana / Gihanga Creation Lore
+- **Horn of Africa (Cushitic)**: Oromo Waaqeffanna / Somali Waaq Lore
+- **Central/West Africa**: Kongo Cosmology (Dikenga dia Kongo)
+- **Southern Africa (Shona)**: Mwari Cosmology
+- **Southern Africa (Zulu/Nguni)**: Unkulunkulu Creation Epic
+- **Southern Africa**: San Bushman / Khoisan Oral Lore
+- **Indian Ocean (Andaman)**: Andamanese (Onge/Jarawa) Puluga Creation
+- **Southeast Asia (Highlands)**: Hmong (Miao) / Karen Cosmology
+- **East Asia (Ryukyu)**: Okinawan Utaki / Amamikyu Creation
+- **Taiwan (Indigenous)**: Amis / Atayal / Paiwan Austronesian Lore
+- **New Guinea (Highlands)**: Huli Dama Cosmology
+- **New Guinea (Sepik)**: Iatmul Crocodile Creation Myths
+- **New Guinea (Papua)**: Asmat Fumeripits Woodcarver Epic
+- **Torres Strait**: Torres Strait Islander Tagai Lore
+- **Amazonian (The Null Hypothesis)**: Pirahã (Lack of Creation Myth / Immediate-Experience Lore)
+- **Canary Islands (Pre-Hispanic)**: Guanche Cosmology (Achamán / Chaxiraxi)
+- **Balkans (Neolithic)**: Vinca Culture / Old European Symbols (Tartaria Tablets)
+- **Taimyr Peninsula (Arctic Isolate)**: Nganasan Pure Shamanism (Tadibya)
+- **Southeast Asia / Philippines (Negrito)**: Batek / Aeta Deep Jungle Forager Lore (Apo Namalyari)
+- **Caribbean (Pre-Contact)**: Taíno / Arawak Zemi Cosmology (Yúcahu / Atabey)
+- **Andes (Pre-Inca)**: Chachapoyas (Warriors of the Clouds) Burial Lore
+- **Mesopotamian Marshes**: Mandaean Gnosticism (Ginza Rabba)
+- **East African Rift (Language Isolate)**: Hadza Hunter-Gatherer Cosmology (Ishoko / Haine)
+- **Central African Rainforest (Isolate)**: Mbuti / Baka Cosmology (The Molimo / Forest as Deity)
+- **Southernmost Earth (Tierra del Fuego)**: Yaghan / Yamana (Watauineiwa / Hain Ceremony)
+- **Hindu Kush (Isolate)**: Kalash Animism (Pre-Islamic Indo-Aryan / Dezau)
+- **Himalayan (Pre-Buddhist)**: Bon Religion / Zhang Zhung (Tonpa Shenrab)
+- **Caucasus (Nakh Isolate)**: Vainakh (Chechen/Ingush) Polytheism (Deela / Tusholi)
+- **Pre-Celtic Iberia**: Tartessian Cosmology / Aquitanian Epigraphy
+- **Anatolia (The Missing Link)**: Hurrian Kumarbi Cycle / Hittite Telepinu Myth
+- **Deep India (Adivasi/Austroasiatic)**: Santal / Munda Creation Epic (Thakur Jiu)
+- **Arctic Contact Zone**: Kalaallit (Greenlandic Inuit) / Thule-Norse Contact Lore
+- **Paleo-Siberian Bridge**: Yukaghir / Nivkh (Gilyak) Bear Ceremonialism
+- **Polynesia (Eastern Terminus)**: Rapa Nui (Makemake / Rongorongo Lore)
+- **Steppe / Tarim Basin**: Tocharian Buddhism / Scythian Burial Lore
+- **Persia / Central Asia**: Zoroastrian Avesta (Bundahishn) / Yazidi (Tawuse Melek)
+- **Mesopotamian / Indus Border**: Elamite Epigraphy (Susa) / Harappan Motifs
+- **Sudan / Saharan Bridge**: Nubian (Meroitic) Cosmology / Garamantes Lore
+- **Texas / Gulf / Meso-border**: Caddoan (Caddo/Wichita) Origin Lore
+- **Indigenous SA**: Ayvu Rapyta (Guarani Creation)
+- **Indigenous SA**: Mapuche Epew (Trentren Vilu and Caicai Vilu)
+- **Indigenous SA**: Watunna (Yekuana Creation Cycle)
+- **Indigenous SA (Uruguay)**: Charrua Oral Lore
+- **Indigenous SA (Patagonia/Argentina)**: Selk'nam / Tehuelche Cosmology (Kenos)
+- **Amazonian**: Yanomami Cosmology
+- **Amazonian (Tupi)**: Tupan / Tupi-Guarani Mythology
+- **Amazonian (Xingu/Kayapo)**: Xingu Oral Traditions / Kayapo Lore
+- **Indigenous North America (Southwest/Pueblo)**: Hopi Prophecies / Zuni Emergence / Tewa Lore
+- **Indigenous North America (Southwest/Apache)**: Apache (White Painted Woman / Crown Dancers)
+- **Indigenous North America (Sonoran/Mojave)**: Tohono O'odham (I'itoi) / Yuman Cosmology
+- **Indigenous North America (Great Lakes)**: Ojibwe Midewiwin Scrolls
+- **Indigenous North America (Plains)**: Lakota Winter Counts / White Buffalo Calf Woman
+- **Indigenous North America (Arctic)**: Inuit Sedna Epic
+- **Indigenous North America (Arctic/Bering Sea)**: Yup'ik / Aleut (Unangax) Cosmology
+- **Indigenous North America (Subarctic/Cree)**: Cree / Innu (Wesakechak Trickster Cycles)
+- **Indigenous North America (Subarctic/Dene)**: Athabaskan / Dene (Yamozha the Lawgiver)
+- **Indigenous North America (Subarctic/Dogrib)**: Tlicho (Dogrib) Creation Epics
+- **Indigenous North America (Newfoundland)**: Beothuk Cosmology Fragments
+- **Indigenous North America (Plateau)**: Salish / Okanagan (Coyote / Transformer Lore)
+- **Indigenous North America (Plateau/Snake River)**: Nez Perce (Heart of the Monster) / Cayuse
+- **Indigenous North America (Southeast)**: Cherokee / Choctaw (Five Civilized Tribes) Mythos
+- **Indigenous North America (Gulf Coast/Florida)**: Natchez (Great Sun) / Calusa / Timucua
+- **Indigenous North America (Great Basin)**: Comanche / Shoshone / Ute Oral Traditions
+- **Indigenous North America (Great Basin)**: Paiute (Numa) / Washoe Cosmology
+- **Indigenous North America (Plains)**: Blackfoot (Napi) / Cheyenne (Sweet Medicine)
+- **Indigenous North America (Plains)**: Crow (Apsaalooke) / Kiowa (Saynday) / Arapaho Lore
+- **Indigenous North America (Plains)**: Pawnee Star Cosmology (Skidi) / Mandan Okipa Epic
+- **Indigenous North America (Midwest/Prairies)**: Osage / Omaha (Wah'Kon-Tah Cosmology)
+- **Indigenous North America (Midwest/Great Lakes)**: Ho-Chunk (Red Horn Cycle) / Potawatomi / Odawa
+- **Indigenous North America (California)**: Chumash / Miwok / Pomo Creation Lore
+- **Indigenous North America (New England)**: Lenape (Walam Olum) / Wampanoag Creation
+- **Pacific Northwest**: Haida / Tlingit Raven Cycles
+- **Pacific Northwest (Northern BC)**: Tsimshian / Nisga'a / Gitxsan Adaawk (Oral Histories)
+- **Pacific Northwest (Coast)**: Kwakwaka'wakw (Winter Ceremonials) / Nuu-chah-nulth / Quileute
+- **Wabanaki / Mi'kmaq**: Komqwejwi'kasikl (Suckerfish Hieroglyphs)
+- **Aboriginal Australian**: Dreamtime (Tjukurpa / Rainbow Serpent)
+- **South Asia (Tamil)**: Silappatikaram / Sangam Literature
+- **South Asia (Sri Lanka)**: Mahavamsa / Dipavamsa
+- **South Asia (India)**: Puranas (Vishnu/Shiva) / Jain Agamas
+- **South Asia (India)**: Guru Granth Sahib

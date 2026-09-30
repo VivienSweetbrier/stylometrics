@@ -1,0 +1,104 @@
+---
+title: "Transparent Computational Reconstruction of the Synoptic Problem"
+format: html
+---
+
+## Overview
+This reproducible report integrates our Python data loading processes with our R/Stan Bayesian inference models to evaluate competing hypotheses.
+
+## Needleman-Wunsch Alignment Verification
+Before passing data to our `CmdStan` models, we must verify the sequence alignment between the Gospels. If the algorithm misaligns the Greek lemmas, the Bayesian models will calculate probabilities on faulty data.
+
+Here we align the first 30 words of Matthew and Luke from our test database.
+
+```python
+# (Code previously executed via background pipeline)
+import sqlite3
+import pandas as pd
+import sys
+import os
+from IPython.display import display, HTML
+
+# Import our custom alignment logic
+sys.path.append(os.path.abspath('../src/data_loader'))
+from query_stan import needleman_wunsch, DB_PATH
+
+# 1. Fetch the test data (Pericope 1)
+conn = sqlite3.connect(DB_PATH)
+query = """
+    SELECT w.id, v.text_source, w.lemma, w.morph_tag, w.dependency_relation
+    FROM words w
+    JOIN verses v ON w.verse_id = v.id
+    WHERE v.pericope_id = 1
+    ORDER BY v.text_source, w.id
+"""
+df = pd.read_sql_query(query, conn)
+conn.close()
+
+# Grab a subset for visual inspection
+df_mat = df[df['text_source'] == 'MAT'].reset_index(drop=True).head(30)
+df_luk = df[df['text_source'] == 'LUK'].reset_index(drop=True).head(30)
+
+# 2. Run the dynamic programming alignment
+src_aligned, tgt_aligned = needleman_wunsch(df_mat, df_luk)
+
+# 3. Format for display
+display_data = []
+for s, t in zip(src_aligned, tgt_aligned):
+    mat_lemma = s['lemma'] if s is not None else "--- GAP ---"
+    luk_lemma = t['lemma'] if t is not None else "--- GAP ---"
+    
+    # Check lexical match
+    match = "MATCH" if mat_lemma == luk_lemma and mat_lemma != "--- GAP ---" else "MISMATCH"
+    
+    display_data.append({
+        "Matthew Lemma": mat_lemma,
+        "Luke Lemma": luk_lemma,
+        "Y_Lexical": match
+    })
+
+viz_df = pd.DataFrame(display_data)
+
+# Export to an HTML file for instant viewing (in case Quarto isn't rendered yet)
+viz_df.to_html(os.path.abspath('../data/processed/alignment_visual.html'), index=False)
+
+# Display in the notebook
+display(HTML(viz_df.to_html(index=False)))
+```
+
+## Bayesian Inference (rstanarm)
+
+Since local C++ compilers (RTools) are hanging on your system, we will use `rstanarm`. Unlike `brms`, which tries to write and compile custom C++ code on your machine, `rstanarm` comes with the Stan models **pre-compiled** out of the box. It uses the exact same Hamiltonian Monte Carlo math, but skips the 5-minute wait!
+
+```{r}
+#| message: false
+#| warning: false
+library(rstanarm)
+library(jsonlite)
+
+# Load the verified JSON data exported from Python
+raw_data <- fromJSON("../data/processed/stan_fatigue_data.json")
+
+# Convert to an R DataFrame
+df <- data.frame(
+  Y_lexical = raw_data$Y_lexical,
+  text_position = raw_data$text_position,
+  pericope = as.factor(raw_data$pericope)
+)
+
+# Run a standard Bayesian logistic regression (Pre-compiled!)
+# Note: We removed the (1 | pericope) random effect for this pilot test 
+# because our current dataset only contains a single group (Pericope 2).
+fit <- stan_glm(
+  formula = Y_lexical ~ text_position,
+  data = df,
+  family = binomial(link = "logit"),
+  seed = 123,
+  chains = 2,
+  iter = 2000,
+  cores = 1
+)
+
+# Print the summary
+summary(fit)
+```

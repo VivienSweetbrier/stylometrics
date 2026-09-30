@@ -1,0 +1,253 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://grokipedia.com/page/Development_of_doctrine",
+      "title": "",
+      "accessed": "2026-09-18"
+    },
+    {
+      "id": 2,
+      "url": "https://muse.jhu.edu/article/736253",
+      "title": "",
+      "accessed": "2026-09-18"
+    },
+    {
+      "id": 3,
+      "url": "https://archive.org/stream/a599953500newmuoft/a599953500newmuoft_djvu.txt",
+      "title": "",
+      "accessed": "2026-09-18"
+    },
+    {
+      "id": 4,
+      "url": "https://archium.ateneo.edu/cgi/viewcontent.cgi?article=1003&context=landas",
+      "title": "",
+      "accessed": "2026-09-18"
+    },
+    {
+      "id": 5,
+      "url": "https://doi.org/10.5040/9780567689030",
+      "title": "",
+      "accessed": "2026-09-18"
+    },
+    {
+      "id": 6,
+      "url": "https://press.vatican.va/roman_curia/congregations/cfaith/ccc_documents/rc_con_cfaith_doc_19920625_informative-ccc_en.html",
+      "title": "Informative Dossier",
+      "accessed": "2026-09-18",
+      "quotes": [
+        {
+          "text": "In the midst of the XVI Century, as a mature result of the Council of Trent, we find the Catechism published in 1566(13).",
+          "added": "2026-09-19"
+        },
+        {
+          "text": "Although it cannot be called the \"Catechism of the Second Vatican Council\", since it was not mandated by the Council, nevertheless in several ways the Catechism of the Catholic Church is related to the Second Vatican Council:",
+          "added": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "http://sourcebooks.fordham.edu/mod/romancat.html",
+      "title": "Internet History Sourcebooks: Modern History",
+      "accessed": "2026-09-18"
+    },
+    {
+      "id": 8,
+      "url": "https://www.vatican.va/archive/hist%5Fcouncils/ii%5Fvatican%5Fcouncil/documents/vat-ii_const_19651118_dei-verbum_en.html",
+      "title": "Dei verbum",
+      "accessed": "2026-09-18",
+      "quotes": [
+        {
+          "text": "This tradition which comes from the Apostles develops in the Church with the help of the Holy Spirit.",
+          "added": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html",
+      "title": "Dignitatis humanae",
+      "accessed": "2026-09-19",
+      "quotes": [
+        {
+          "text": "Religious freedom, in turn, which men demand as necessary to fulfill their duty to worship God, has to do with immunity from coercion in civil society. Therefore it leaves untouched traditional Catholic doctrine on the moral duty of men and societies toward the true religion and toward the one Church of Christ.",
+          "added": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20180801_lettera-vescovi-penadimorte_en.html",
+      "title": "Letter to the Bishops regarding the new revision of number 2267 of the Catechism of the Catholic Church on the death penalty, from the Congregation for the Doctrine of the Faith (1 August 2018)",
+      "accessed": "2026-09-19",
+      "quotes": [
+        {
+          "text": "The new revision of number 2267 of the Catechism of the Catholic Church, approved by Pope Francis, situates itself in continuity with the preceding Magisterium while bringing forth a coherent development of Catholic doctrine.",
+          "added": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://newmanreader.org/works/development/chapter5.html",
+      "title": "Newman Reader - Development of Christian Doctrine - Chapter 5",
+      "accessed": "2026-09-19",
+      "quotes": [
+        {
+          "text": "seven Notes of varying cogency, independence and applicability",
+          "added": "2026-09-19"
+        },
+        {
+          "text": "yet no one can doubt that Eunomianism was a true development, not a corruption of Arianism.",
+          "added": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://newmanreader.org/works/development",
+      "title": "Newman Reader - Development of Christian Doctrine",
+      "accessed": "2026-09-19",
+      "quotes": [
+        {
+          "text": "In this new Edition of the Essay various important alterations have been made in the arrangement of its separate parts, and some, not indeed in its matter, but in its text.",
+          "added": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://doi.org/10.1353/nsj.2013.0014",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 14,
+      "url": "https://web.archive.org/web/20230404052002/https:/www.newmanreader.org/works/development",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 15,
+      "url": "https://muse.jhu.edu/article/736261",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 16,
+      "url": "http://newmanreader.org/works/apologia65/chapter5.html",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 17,
+      "url": "https://www.vatican.va/content/catechism/en/prologue/ii_handing_on_the_faith_catechesis.index.html",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 18,
+      "url": "https://www.vatican.va/roman%5Fcuria/congregations/cevang/documents/rc_con_cevang_doc_19971203_cath_en.html",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 19,
+      "url": "https://www.vatican.va/roman_curia/congregations/cclergy/documents/rc_con_cclergy_doc_11081997_gdc_en.html",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 20,
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/04/08/240408c.html",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 21,
+      "url": "https://www.vatican.va/content/leo-xiv/en/speeches/2025/october/documents/20251010-acs.html",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 22,
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/cti_documents/rc_cti_20190426_liberta-religiosa_en.html",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 23,
+      "url": "https://www.vatican.va/roman_curia/pontifical_councils/interelg/documents/rc_pc_interelg_doc_20071105_diwali_en.html",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 24,
+      "url": "http://www.archive.org/download/thecatechismofth00donouoft/thecatechismofth00donouoft.pdf",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 25,
+      "url": "https://archive.org/download/catechismofcounc0000cath/catechismofcounc0000cath.pdf",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 26,
+      "url": "http://archbishoplefebvre.com/uploads/1/0/3/2/10321570/romancat.pdf",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 27,
+      "url": "https://www.vatican.va/latin/latin_catechism.html",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 28,
+      "url": "https://www.vatican.va/archive/catechism_lt/lettera-apost_lt.htm",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 29,
+      "url": "https://www.vatican.va/archive/catechism_lt/p3s2c2a5_lt.htm",
+      "title": "",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 30,
+      "url": "https://sourcebooks.fordham.edu/mod/romancat.asp",
+      "title": "Internet History Sourcebooks: Modern History",
+      "accessed": "2026-09-19",
+      "quotes": [
+        {
+          "text": "The divisions and headings in this text of the Catechism form no part of the original work and were supplied by the translators.",
+          "added": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1997/documents/hf_jp-ii_apl_15081997_laetamur.html",
+      "title": "Laetamur magnopere (August 15, 1997)",
+      "accessed": "2026-09-19",
+      "quotes": [
+        {
+          "text": "This is occurring about five years after the Apostolic Constitution Fidei Depositum of October 11, 1992, which, on the 30th anniversary of the opening of the Second Vatican Council, accompanied the publication of the first, French-language text of the Catechism.",
+          "added": "2026-09-19"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_19921011_fidei-depositum.html",
+      "title": "Fidei Depositum (October 11, 1992)",
+      "accessed": "2026-09-19"
+    }
+  ]
+}

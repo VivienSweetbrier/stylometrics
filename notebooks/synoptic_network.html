@@ -1,0 +1,965 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+                <link href="lib/tom-select/tom-select.css" rel="stylesheet">
+                <script src="lib/tom-select/tom-select.complete.min.js"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 800px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="Source 1">Source 1</option>
+                                
+                                    <option value="Source 2">Source 2</option>
+                                
+                                    <option value="Source 3">Source 3</option>
+                                
+                                    <option value="P1">P1</option>
+                                
+                                    <option value="P2">P2</option>
+                                
+                                    <option value="P3">P3</option>
+                                
+                                    <option value="P4">P4</option>
+                                
+                                    <option value="P5">P5</option>
+                                
+                                    <option value="P7">P7</option>
+                                
+                                    <option value="P8">P8</option>
+                                
+                                    <option value="P9">P9</option>
+                                
+                                    <option value="P10">P10</option>
+                                
+                                    <option value="P11">P11</option>
+                                
+                                    <option value="P12">P12</option>
+                                
+                                    <option value="P13">P13</option>
+                                
+                                    <option value="P14">P14</option>
+                                
+                                    <option value="P15">P15</option>
+                                
+                                    <option value="P16">P16</option>
+                                
+                                    <option value="P18">P18</option>
+                                
+                                    <option value="P19">P19</option>
+                                
+                                    <option value="P20">P20</option>
+                                
+                                    <option value="P30">P30</option>
+                                
+                                    <option value="P32">P32</option>
+                                
+                                    <option value="P34">P34</option>
+                                
+                                    <option value="P35">P35</option>
+                                
+                                    <option value="P36">P36</option>
+                                
+                                    <option value="P39">P39</option>
+                                
+                                    <option value="P40">P40</option>
+                                
+                                    <option value="P41">P41</option>
+                                
+                                    <option value="P48">P48</option>
+                                
+                                    <option value="P53">P53</option>
+                                
+                                    <option value="P54">P54</option>
+                                
+                                    <option value="P55">P55</option>
+                                
+                                    <option value="P56">P56</option>
+                                
+                                    <option value="P60">P60</option>
+                                
+                                    <option value="P61">P61</option>
+                                
+                                    <option value="P62">P62</option>
+                                
+                                    <option value="P63">P63</option>
+                                
+                                    <option value="P69">P69</option>
+                                
+                                    <option value="P76">P76</option>
+                                
+                                    <option value="P78">P78</option>
+                                
+                                    <option value="P80">P80</option>
+                                
+                                    <option value="P81">P81</option>
+                                
+                                    <option value="P82">P82</option>
+                                
+                                    <option value="P83">P83</option>
+                                
+                                    <option value="P84">P84</option>
+                                
+                                    <option value="P85">P85</option>
+                                
+                                    <option value="P86">P86</option>
+                                
+                                    <option value="P87">P87</option>
+                                
+                                    <option value="P88">P88</option>
+                                
+                                    <option value="P92">P92</option>
+                                
+                                    <option value="P93">P93</option>
+                                
+                                    <option value="P94">P94</option>
+                                
+                                    <option value="P96">P96</option>
+                                
+                                    <option value="P97">P97</option>
+                                
+                                    <option value="P98">P98</option>
+                                
+                                    <option value="P99">P99</option>
+                                
+                                    <option value="P100">P100</option>
+                                
+                                    <option value="P103">P103</option>
+                                
+                                    <option value="P104">P104</option>
+                                
+                                    <option value="P105">P105</option>
+                                
+                                    <option value="P106">P106</option>
+                                
+                                    <option value="P107">P107</option>
+                                
+                                    <option value="P109">P109</option>
+                                
+                                    <option value="P110">P110</option>
+                                
+                                    <option value="P111">P111</option>
+                                
+                                    <option value="P112">P112</option>
+                                
+                                    <option value="P113">P113</option>
+                                
+                                    <option value="P115">P115</option>
+                                
+                                    <option value="P116">P116</option>
+                                
+                                    <option value="P122">P122</option>
+                                
+                                    <option value="P123">P123</option>
+                                
+                                    <option value="P124">P124</option>
+                                
+                                    <option value="P125">P125</option>
+                                
+                                    <option value="P126">P126</option>
+                                
+                                    <option value="P127">P127</option>
+                                
+                                    <option value="P130">P130</option>
+                                
+                                    <option value="P131">P131</option>
+                                
+                                    <option value="P132">P132</option>
+                                
+                                    <option value="P133">P133</option>
+                                
+                                    <option value="P134">P134</option>
+                                
+                                    <option value="P135">P135</option>
+                                
+                                    <option value="P136">P136</option>
+                                
+                                    <option value="P137">P137</option>
+                                
+                                    <option value="P138">P138</option>
+                                
+                                    <option value="P139">P139</option>
+                                
+                                    <option value="P142">P142</option>
+                                
+                                    <option value="P143">P143</option>
+                                
+                                    <option value="P144">P144</option>
+                                
+                                    <option value="P145">P145</option>
+                                
+                                    <option value="P146">P146</option>
+                                
+                                    <option value="P147">P147</option>
+                                
+                                    <option value="P148">P148</option>
+                                
+                                    <option value="P153">P153</option>
+                                
+                                    <option value="P154">P154</option>
+                                
+                                    <option value="P155">P155</option>
+                                
+                                    <option value="P156">P156</option>
+                                
+                                    <option value="P158">P158</option>
+                                
+                                    <option value="P159">P159</option>
+                                
+                                    <option value="P160">P160</option>
+                                
+                                    <option value="P161">P161</option>
+                                
+                                    <option value="P162">P162</option>
+                                
+                                    <option value="P163">P163</option>
+                                
+                                    <option value="P164">P164</option>
+                                
+                                    <option value="P165">P165</option>
+                                
+                                    <option value="P166">P166</option>
+                                
+                                    <option value="P167">P167</option>
+                                
+                                    <option value="P168">P168</option>
+                                
+                                    <option value="P169">P169</option>
+                                
+                                    <option value="P170">P170</option>
+                                
+                                    <option value="P171">P171</option>
+                                
+                                    <option value="P172">P172</option>
+                                
+                                    <option value="P173">P173</option>
+                                
+                                    <option value="P175">P175</option>
+                                
+                                    <option value="P176">P176</option>
+                                
+                                    <option value="P177">P177</option>
+                                
+                                    <option value="P178">P178</option>
+                                
+                                    <option value="P179">P179</option>
+                                
+                                    <option value="P180">P180</option>
+                                
+                                    <option value="P181">P181</option>
+                                
+                                    <option value="P183">P183</option>
+                                
+                                    <option value="P184">P184</option>
+                                
+                                    <option value="P185">P185</option>
+                                
+                                    <option value="P186">P186</option>
+                                
+                                    <option value="P187">P187</option>
+                                
+                                    <option value="P188">P188</option>
+                                
+                                    <option value="P189">P189</option>
+                                
+                                    <option value="P190">P190</option>
+                                
+                                    <option value="P191">P191</option>
+                                
+                                    <option value="P192">P192</option>
+                                
+                                    <option value="P193">P193</option>
+                                
+                                    <option value="P194">P194</option>
+                                
+                                    <option value="P195">P195</option>
+                                
+                                    <option value="P196">P196</option>
+                                
+                                    <option value="P197">P197</option>
+                                
+                                    <option value="P198">P198</option>
+                                
+                                    <option value="P199">P199</option>
+                                
+                                    <option value="P200">P200</option>
+                                
+                                    <option value="P201">P201</option>
+                                
+                                    <option value="P202">P202</option>
+                                
+                                    <option value="P203">P203</option>
+                                
+                                    <option value="P204">P204</option>
+                                
+                                    <option value="P205">P205</option>
+                                
+                                    <option value="P206">P206</option>
+                                
+                                    <option value="P207">P207</option>
+                                
+                                    <option value="P208">P208</option>
+                                
+                                    <option value="P209">P209</option>
+                                
+                                    <option value="P210">P210</option>
+                                
+                                    <option value="P211">P211</option>
+                                
+                                    <option value="P212">P212</option>
+                                
+                                    <option value="P214">P214</option>
+                                
+                                    <option value="P215">P215</option>
+                                
+                                    <option value="P217">P217</option>
+                                
+                                    <option value="P218">P218</option>
+                                
+                                    <option value="P219">P219</option>
+                                
+                                    <option value="P220">P220</option>
+                                
+                                    <option value="P221">P221</option>
+                                
+                                    <option value="P222">P222</option>
+                                
+                                    <option value="P223">P223</option>
+                                
+                                    <option value="P224">P224</option>
+                                
+                                    <option value="P225">P225</option>
+                                
+                                    <option value="P226">P226</option>
+                                
+                                    <option value="P228">P228</option>
+                                
+                                    <option value="P229">P229</option>
+                                
+                                    <option value="P230">P230</option>
+                                
+                                    <option value="P231">P231</option>
+                                
+                                    <option value="P232">P232</option>
+                                
+                                    <option value="P233">P233</option>
+                                
+                                    <option value="P234">P234</option>
+                                
+                                    <option value="P235">P235</option>
+                                
+                                    <option value="P236">P236</option>
+                                
+                                    <option value="P237">P237</option>
+                                
+                                    <option value="P251">P251</option>
+                                
+                                    <option value="P252">P252</option>
+                                
+                                    <option value="P253">P253</option>
+                                
+                                    <option value="P254">P254</option>
+                                
+                                    <option value="P255">P255</option>
+                                
+                                    <option value="P256">P256</option>
+                                
+                                    <option value="P262">P262</option>
+                                
+                                    <option value="P263">P263</option>
+                                
+                                    <option value="P264">P264</option>
+                                
+                                    <option value="P265">P265</option>
+                                
+                                    <option value="P269">P269</option>
+                                
+                                    <option value="P270">P270</option>
+                                
+                                    <option value="P271">P271</option>
+                                
+                                    <option value="P272">P272</option>
+                                
+                                    <option value="P273">P273</option>
+                                
+                                    <option value="P274">P274</option>
+                                
+                                    <option value="P275">P275</option>
+                                
+                                    <option value="P276">P276</option>
+                                
+                                    <option value="P277">P277</option>
+                                
+                                    <option value="P278">P278</option>
+                                
+                                    <option value="P279">P279</option>
+                                
+                                    <option value="P280">P280</option>
+                                
+                                    <option value="P281">P281</option>
+                                
+                                    <option value="P282">P282</option>
+                                
+                                    <option value="P283">P283</option>
+                                
+                                    <option value="P284">P284</option>
+                                
+                                    <option value="P285">P285</option>
+                                
+                                    <option value="P286">P286</option>
+                                
+                                    <option value="P287">P287</option>
+                                
+                                    <option value="P288">P288</option>
+                                
+                                    <option value="P289">P289</option>
+                                
+                                    <option value="P290">P290</option>
+                                
+                                    <option value="P291">P291</option>
+                                
+                                    <option value="P292">P292</option>
+                                
+                                    <option value="P293">P293</option>
+                                
+                                    <option value="P294">P294</option>
+                                
+                                    <option value="P295">P295</option>
+                                
+                                    <option value="P296">P296</option>
+                                
+                                    <option value="P297">P297</option>
+                                
+                                    <option value="P298">P298</option>
+                                
+                                    <option value="P299">P299</option>
+                                
+                                    <option value="P300">P300</option>
+                                
+                                    <option value="P301">P301</option>
+                                
+                                    <option value="P305">P305</option>
+                                
+                                    <option value="P306">P306</option>
+                                
+                                    <option value="P307">P307</option>
+                                
+                                    <option value="P308">P308</option>
+                                
+                                    <option value="P309">P309</option>
+                                
+                                    <option value="P311">P311</option>
+                                
+                                    <option value="P312">P312</option>
+                                
+                                    <option value="P313">P313</option>
+                                
+                                    <option value="P315">P315</option>
+                                
+                                    <option value="P316">P316</option>
+                                
+                                    <option value="P330">P330</option>
+                                
+                                    <option value="P331">P331</option>
+                                
+                                    <option value="P332">P332</option>
+                                
+                                    <option value="P333">P333</option>
+                                
+                                    <option value="P334">P334</option>
+                                
+                                    <option value="P335">P335</option>
+                                
+                                    <option value="P336">P336</option>
+                                
+                                    <option value="P337">P337</option>
+                                
+                                    <option value="P338">P338</option>
+                                
+                                    <option value="P339">P339</option>
+                                
+                                    <option value="P341">P341</option>
+                                
+                                    <option value="P342">P342</option>
+                                
+                                    <option value="P343">P343</option>
+                                
+                                    <option value="P344">P344</option>
+                                
+                                    <option value="P345">P345</option>
+                                
+                                    <option value="P346">P346</option>
+                                
+                                    <option value="P347">P347</option>
+                                
+                                    <option value="P348">P348</option>
+                                
+                                    <option value="P350">P350</option>
+                                
+                                    <option value="P351">P351</option>
+                                
+                                    <option value="P352">P352</option>
+                                
+                                    <option value="P353">P353</option>
+                                
+                                    <option value="P354">P354</option>
+                                
+                                    <option value="P355">P355</option>
+                                
+                                    <option value="P356">P356</option>
+                                
+                                    <option value="P363">P363</option>
+                                
+                                    <option value="P364">P364</option>
+                                
+                                    <option value="P365">P365</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+              <div id="filter-menu" class="card-header">
+                <div class="row no-gutters">
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'item')"
+                            id="select-item"
+                        >
+                        <option value="">Select a network item</option>
+                        <option value="edge">edge</option>
+                        <option value="node">node</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'property')"
+                            id="select-property"
+                        >
+                        <option value="">Select a property...</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="select-value"
+                        >
+                        <option value="">Select value(s)...</option>
+                    </select>
+                  </div>
+                  <div class="col-1 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="highlightFilter(filter);">Filter</button>
+                  </div>
+                  <div class="col-2 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="clearFilter(true)">Reset Selection</button>
+                  </div>
+                </div>
+              </div>
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+                  // explicitly using onItemAdd and this function as we need to save multiple values
+                  let updateValueFilter = function() {
+                      return function () {
+                      filter['value'].push(arguments[0])
+                      }
+                  }
+
+                  let valueControl = new TomSelect("#select-value",{
+                      maxItems: null,
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: updateValueFilter()
+                  });
+
+                  let addValues = function() {
+                      return function () {
+                          // clear the current value options and add the selected attribute values
+                          // tom-select handles duplicates
+                          let selectedProperty = arguments[0];
+                          valueControl.clear();
+                          valueControl.clearOptions();
+                          filter['value'] = []
+                          if (filter['item'] === 'node') {
+                              for (let each in allNodes) {
+                                  valueControl.addOption({
+                                      id:allNodes[each][selectedProperty],
+                                      title:allNodes[each][selectedProperty]
+                                  })
+                              }
+                          }
+                          else if (filter['item'] === 'edge') {
+                              for (let each in allEdges) {
+                                  valueControl.addOption({
+                                      id:allEdges[each][selectedProperty],
+                                      title:allEdges[each][selectedProperty]
+                                  })
+                              }
+                          }
+                      }
+                  };
+
+                  let propControl = new TomSelect("#select-property",{
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addValues()
+                  });
+
+                  let addProperties = function() {
+                      return function () {
+                          // loops through the selected network item and adds the attributes to dropdown
+                          // tom-select handles duplicates
+                          clearFilter(false)
+                          if (arguments[0] === 'edge') {
+                              for (let each in allEdges) {
+                                  if (allEdges.hasOwnProperty(each)) {
+                                      for (let eachProp in allEdges[each]) {
+                                          if (allEdges[each].hasOwnProperty(eachProp)) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                          else if (arguments[0] === 'node') {
+                              for (let each in allNodes) {
+                                  if (allNodes.hasOwnProperty(each)) {
+                                      for (let eachProp in allNodes[each]) {
+                                          if (allNodes[each].hasOwnProperty(eachProp)
+                                              && (eachProp !== 'hidden' && eachProp !== 'savedLabel'
+                                                  && eachProp !== 'hiddenLabel')) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  };
+
+                  let itemControl = new TomSelect("#select-item",{
+                      create: false,
+                      sortField:{
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addProperties()
+                  });
+
+                  function clearFilter(reset) {
+                      // utility function to clear all the selected filter options
+                      // if reset is set to true, the existing filter will be removed
+                      // else, only the dropdown options are cleared
+                      propControl.clear();
+                      propControl.clearOptions();
+                      valueControl.clear();
+                      valueControl.clearOptions();
+                      filter = {
+                          item : '',
+                          property : '',
+                          value : []
+                      }
+                      if (reset) {
+                          itemControl.clear();
+                          filterHighlight({nodes: []})
+                      }
+                  }
+
+                  function updateFilter(value, key) {
+                      // key could be 'item' or 'property' and value is as selected in dropdown
+                      filter[key] = value
+                  }
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#e74c3c", "font": {"color": "white"}, "id": "Source 1", "label": "Latent Source 1\n(e.g., Markan Spine)", "shape": "dot", "size": 50, "title": "The primary structural narrative spine."}, {"color": "#3498db", "font": {"color": "white"}, "id": "Source 2", "label": "Latent Source 2\n(e.g., Q Document)", "shape": "dot", "size": 50, "title": "The secondary teaching/sayings spine."}, {"color": "#2ecc71", "font": {"color": "white"}, "id": "Source 3", "label": "Latent Source 3\n(e.g., L/M/John)", "shape": "dot", "size": 50, "title": "Independent, localized, or Johannine tradition."}, {"color": "#badc58", "font": {"color": "white"}, "id": "P1", "label": "Pericope 1", "shape": "dot", "size": 15, "title": "Pericope 1\nDominant: Source 3 (99.4%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P2", "label": "Pericope 2", "shape": "dot", "size": 15, "title": "Pericope 2\nDominant: Source 3 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P3", "label": "Pericope 3", "shape": "dot", "size": 15, "title": "Pericope 3\nDominant: Source 3 (99.9%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P4", "label": "Pericope 4", "shape": "dot", "size": 15, "title": "Pericope 4\nDominant: Source 2 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P5", "label": "Pericope 5", "shape": "dot", "size": 15, "title": "Pericope 5\nDominant: Source 3 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P7", "label": "Pericope 7", "shape": "dot", "size": 15, "title": "Pericope 7\nDominant: Source 1 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P8", "label": "Pericope 8", "shape": "dot", "size": 15, "title": "Pericope 8\nDominant: Source 3 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P9", "label": "Pericope 9", "shape": "dot", "size": 15, "title": "Pericope 9\nDominant: Source 3 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P10", "label": "Pericope 10", "shape": "dot", "size": 15, "title": "Pericope 10\nDominant: Source 3 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P11", "label": "Pericope 11", "shape": "dot", "size": 15, "title": "Pericope 11\nDominant: Source 1 (99.1%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P12", "label": "Pericope 12", "shape": "dot", "size": 15, "title": "Pericope 12\nDominant: Source 3 (99.9%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P13", "label": "HYBRID: Pericope 13", "shape": "dot", "size": 30, "title": "Pericope 13\nDominant: Source 1 (33.3%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P14", "label": "Pericope 14", "shape": "dot", "size": 15, "title": "Pericope 14\nDominant: Source 2 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P15", "label": "Pericope 15", "shape": "dot", "size": 15, "title": "Pericope 15\nDominant: Source 1 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P16", "label": "Pericope 16", "shape": "dot", "size": 15, "title": "Pericope 16\nDominant: Source 1 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P18", "label": "Pericope 18", "shape": "dot", "size": 15, "title": "Pericope 18\nDominant: Source 2 (99.3%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P19", "label": "Pericope 19", "shape": "dot", "size": 15, "title": "Pericope 19\nDominant: Source 3 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P20", "label": "Pericope 20", "shape": "dot", "size": 15, "title": "Pericope 20\nDominant: Source 2 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P30", "label": "Pericope 30", "shape": "dot", "size": 15, "title": "Pericope 30\nDominant: Source 3 (96.4%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P32", "label": "HYBRID: Pericope 32", "shape": "dot", "size": 30, "title": "Pericope 32\nDominant: Source 3 (82.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P34", "label": "Pericope 34", "shape": "dot", "size": 15, "title": "Pericope 34\nDominant: Source 1 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P35", "label": "Pericope 35", "shape": "dot", "size": 15, "title": "Pericope 35\nDominant: Source 3 (98.9%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P36", "label": "Pericope 36", "shape": "dot", "size": 15, "title": "Pericope 36\nDominant: Source 2 (99.9%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P39", "label": "Pericope 39", "shape": "dot", "size": 15, "title": "Pericope 39\nDominant: Source 2 (99.7%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P40", "label": "HYBRID: Pericope 40", "shape": "dot", "size": 30, "title": "Pericope 40\nDominant: Source 1 (33.3%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P41", "label": "Pericope 41", "shape": "dot", "size": 15, "title": "Pericope 41\nDominant: Source 2 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P48", "label": "Pericope 48", "shape": "dot", "size": 15, "title": "Pericope 48\nDominant: Source 3 (99.4%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P53", "label": "Pericope 53", "shape": "dot", "size": 15, "title": "Pericope 53\nDominant: Source 3 (99.1%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P54", "label": "Pericope 54", "shape": "dot", "size": 15, "title": "Pericope 54\nDominant: Source 3 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P55", "label": "Pericope 55", "shape": "dot", "size": 15, "title": "Pericope 55\nDominant: Source 2 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P56", "label": "Pericope 56", "shape": "dot", "size": 15, "title": "Pericope 56\nDominant: Source 2 (99.5%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P60", "label": "Pericope 60", "shape": "dot", "size": 15, "title": "Pericope 60\nDominant: Source 2 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P61", "label": "Pericope 61", "shape": "dot", "size": 15, "title": "Pericope 61\nDominant: Source 1 (99.5%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P62", "label": "Pericope 62", "shape": "dot", "size": 15, "title": "Pericope 62\nDominant: Source 1 (99.5%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P63", "label": "Pericope 63", "shape": "dot", "size": 15, "title": "Pericope 63\nDominant: Source 2 (99.5%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P69", "label": "Pericope 69", "shape": "dot", "size": 15, "title": "Pericope 69\nDominant: Source 2 (98.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P76", "label": "Pericope 76", "shape": "dot", "size": 15, "title": "Pericope 76\nDominant: Source 3 (99.1%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P78", "label": "Pericope 78", "shape": "dot", "size": 15, "title": "Pericope 78\nDominant: Source 3 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P80", "label": "Pericope 80", "shape": "dot", "size": 15, "title": "Pericope 80\nDominant: Source 1 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P81", "label": "Pericope 81", "shape": "dot", "size": 15, "title": "Pericope 81\nDominant: Source 3 (99.8%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P82", "label": "Pericope 82", "shape": "dot", "size": 15, "title": "Pericope 82\nDominant: Source 1 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P83", "label": "Pericope 83", "shape": "dot", "size": 15, "title": "Pericope 83\nDominant: Source 1 (99.8%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P84", "label": "Pericope 84", "shape": "dot", "size": 15, "title": "Pericope 84\nDominant: Source 1 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P85", "label": "Pericope 85", "shape": "dot", "size": 15, "title": "Pericope 85\nDominant: Source 3 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P86", "label": "Pericope 86", "shape": "dot", "size": 15, "title": "Pericope 86\nDominant: Source 3 (99.8%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P87", "label": "Pericope 87", "shape": "dot", "size": 15, "title": "Pericope 87\nDominant: Source 1 (99.3%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P88", "label": "Pericope 88", "shape": "dot", "size": 15, "title": "Pericope 88\nDominant: Source 1 (99.5%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P92", "label": "Pericope 92", "shape": "dot", "size": 15, "title": "Pericope 92\nDominant: Source 1 (99.9%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P93", "label": "HYBRID: Pericope 93", "shape": "dot", "size": 30, "title": "Pericope 93\nDominant: Source 1 (33.3%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P94", "label": "Pericope 94", "shape": "dot", "size": 15, "title": "Pericope 94\nDominant: Source 3 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P96", "label": "Pericope 96", "shape": "dot", "size": 15, "title": "Pericope 96\nDominant: Source 2 (99.6%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P97", "label": "Pericope 97", "shape": "dot", "size": 15, "title": "Pericope 97\nDominant: Source 3 (99.2%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P98", "label": "Pericope 98", "shape": "dot", "size": 15, "title": "Pericope 98\nDominant: Source 3 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P99", "label": "Pericope 99", "shape": "dot", "size": 15, "title": "Pericope 99\nDominant: Source 1 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P100", "label": "Pericope 100", "shape": "dot", "size": 15, "title": "Pericope 100\nDominant: Source 1 (99.8%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P103", "label": "Pericope 103", "shape": "dot", "size": 15, "title": "Pericope 103\nDominant: Source 1 (98.0%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P104", "label": "Pericope 104", "shape": "dot", "size": 15, "title": "Pericope 104\nDominant: Source 2 (98.5%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P105", "label": "Pericope 105", "shape": "dot", "size": 15, "title": "Pericope 105\nDominant: Source 3 (98.5%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P106", "label": "Pericope 106", "shape": "dot", "size": 15, "title": "Pericope 106\nDominant: Source 2 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P107", "label": "Pericope 107", "shape": "dot", "size": 15, "title": "Pericope 107\nDominant: Source 2 (99.9%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P109", "label": "Pericope 109", "shape": "dot", "size": 15, "title": "Pericope 109\nDominant: Source 2 (99.6%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P110", "label": "Pericope 110", "shape": "dot", "size": 15, "title": "Pericope 110\nDominant: Source 3 (99.4%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P111", "label": "Pericope 111", "shape": "dot", "size": 15, "title": "Pericope 111\nDominant: Source 1 (100.0%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P112", "label": "Pericope 112", "shape": "dot", "size": 15, "title": "Pericope 112\nDominant: Source 1 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P113", "label": "Pericope 113", "shape": "dot", "size": 15, "title": "Pericope 113\nDominant: Source 2 (99.6%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P115", "label": "Pericope 115", "shape": "dot", "size": 15, "title": "Pericope 115\nDominant: Source 3 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P116", "label": "Pericope 116", "shape": "dot", "size": 15, "title": "Pericope 116\nDominant: Source 2 (99.1%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P122", "label": "Pericope 122", "shape": "dot", "size": 15, "title": "Pericope 122\nDominant: Source 1 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P123", "label": "Pericope 123", "shape": "dot", "size": 15, "title": "Pericope 123\nDominant: Source 3 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P124", "label": "Pericope 124", "shape": "dot", "size": 15, "title": "Pericope 124\nDominant: Source 2 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P125", "label": "Pericope 125", "shape": "dot", "size": 15, "title": "Pericope 125\nDominant: Source 3 (99.8%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P126", "label": "Pericope 126", "shape": "dot", "size": 15, "title": "Pericope 126\nDominant: Source 1 (99.5%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P127", "label": "Pericope 127", "shape": "dot", "size": 15, "title": "Pericope 127\nDominant: Source 1 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P130", "label": "Pericope 130", "shape": "dot", "size": 15, "title": "Pericope 130\nDominant: Source 3 (99.5%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P131", "label": "Pericope 131", "shape": "dot", "size": 15, "title": "Pericope 131\nDominant: Source 2 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P132", "label": "Pericope 132", "shape": "dot", "size": 15, "title": "Pericope 132\nDominant: Source 3 (99.5%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P133", "label": "Pericope 133", "shape": "dot", "size": 15, "title": "Pericope 133\nDominant: Source 2 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P134", "label": "Pericope 134", "shape": "dot", "size": 15, "title": "Pericope 134\nDominant: Source 1 (99.1%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P135", "label": "Pericope 135", "shape": "dot", "size": 15, "title": "Pericope 135\nDominant: Source 2 (99.4%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P136", "label": "Pericope 136", "shape": "dot", "size": 15, "title": "Pericope 136\nDominant: Source 3 (99.7%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P137", "label": "HYBRID: Pericope 137", "shape": "dot", "size": 30, "title": "Pericope 137\nDominant: Source 1 (33.3%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P138", "label": "Pericope 138", "shape": "dot", "size": 15, "title": "Pericope 138\nDominant: Source 1 (99.9%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P139", "label": "HYBRID: Pericope 139", "shape": "dot", "size": 30, "title": "Pericope 139\nDominant: Source 1 (33.3%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P142", "label": "Pericope 142", "shape": "dot", "size": 15, "title": "Pericope 142\nDominant: Source 1 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P143", "label": "Pericope 143", "shape": "dot", "size": 15, "title": "Pericope 143\nDominant: Source 1 (99.5%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P144", "label": "HYBRID: Pericope 144", "shape": "dot", "size": 30, "title": "Pericope 144\nDominant: Source 1 (33.3%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P145", "label": "Pericope 145", "shape": "dot", "size": 15, "title": "Pericope 145\nDominant: Source 1 (99.4%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P146", "label": "Pericope 146", "shape": "dot", "size": 15, "title": "Pericope 146\nDominant: Source 1 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P147", "label": "Pericope 147", "shape": "dot", "size": 15, "title": "Pericope 147\nDominant: Source 2 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P148", "label": "Pericope 148", "shape": "dot", "size": 15, "title": "Pericope 148\nDominant: Source 1 (99.8%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P153", "label": "Pericope 153", "shape": "dot", "size": 15, "title": "Pericope 153\nDominant: Source 1 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P154", "label": "Pericope 154", "shape": "dot", "size": 15, "title": "Pericope 154\nDominant: Source 1 (96.4%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P155", "label": "Pericope 155", "shape": "dot", "size": 15, "title": "Pericope 155\nDominant: Source 2 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P156", "label": "Pericope 156", "shape": "dot", "size": 15, "title": "Pericope 156\nDominant: Source 3 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P158", "label": "Pericope 158", "shape": "dot", "size": 15, "title": "Pericope 158\nDominant: Source 3 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P159", "label": "Pericope 159", "shape": "dot", "size": 15, "title": "Pericope 159\nDominant: Source 1 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P160", "label": "Pericope 160", "shape": "dot", "size": 15, "title": "Pericope 160\nDominant: Source 1 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P161", "label": "Pericope 161", "shape": "dot", "size": 15, "title": "Pericope 161\nDominant: Source 1 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P162", "label": "Pericope 162", "shape": "dot", "size": 15, "title": "Pericope 162\nDominant: Source 2 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P163", "label": "Pericope 163", "shape": "dot", "size": 15, "title": "Pericope 163\nDominant: Source 3 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P164", "label": "Pericope 164", "shape": "dot", "size": 15, "title": "Pericope 164\nDominant: Source 3 (99.5%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P165", "label": "Pericope 165", "shape": "dot", "size": 15, "title": "Pericope 165\nDominant: Source 3 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P166", "label": "Pericope 166", "shape": "dot", "size": 15, "title": "Pericope 166\nDominant: Source 3 (99.5%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P167", "label": "Pericope 167", "shape": "dot", "size": 15, "title": "Pericope 167\nDominant: Source 1 (99.3%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P168", "label": "Pericope 168", "shape": "dot", "size": 15, "title": "Pericope 168\nDominant: Source 2 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P169", "label": "Pericope 169", "shape": "dot", "size": 15, "title": "Pericope 169\nDominant: Source 1 (98.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P170", "label": "Pericope 170", "shape": "dot", "size": 15, "title": "Pericope 170\nDominant: Source 3 (99.6%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P171", "label": "Pericope 171", "shape": "dot", "size": 15, "title": "Pericope 171\nDominant: Source 3 (99.4%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P172", "label": "Pericope 172", "shape": "dot", "size": 15, "title": "Pericope 172\nDominant: Source 2 (99.2%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P173", "label": "Pericope 173", "shape": "dot", "size": 15, "title": "Pericope 173\nDominant: Source 1 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P175", "label": "Pericope 175", "shape": "dot", "size": 15, "title": "Pericope 175\nDominant: Source 1 (99.5%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P176", "label": "Pericope 176", "shape": "dot", "size": 15, "title": "Pericope 176\nDominant: Source 2 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P177", "label": "Pericope 177", "shape": "dot", "size": 15, "title": "Pericope 177\nDominant: Source 1 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P178", "label": "Pericope 178", "shape": "dot", "size": 15, "title": "Pericope 178\nDominant: Source 1 (99.5%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P179", "label": "HYBRID: Pericope 179", "shape": "dot", "size": 30, "title": "Pericope 179\nDominant: Source 1 (33.3%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P180", "label": "Pericope 180", "shape": "dot", "size": 15, "title": "Pericope 180\nDominant: Source 1 (99.6%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P181", "label": "Pericope 181", "shape": "dot", "size": 15, "title": "Pericope 181\nDominant: Source 2 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P183", "label": "Pericope 183", "shape": "dot", "size": 15, "title": "Pericope 183\nDominant: Source 3 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P184", "label": "Pericope 184", "shape": "dot", "size": 15, "title": "Pericope 184\nDominant: Source 3 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P185", "label": "Pericope 185", "shape": "dot", "size": 15, "title": "Pericope 185\nDominant: Source 2 (99.6%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P186", "label": "Pericope 186", "shape": "dot", "size": 15, "title": "Pericope 186\nDominant: Source 2 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P187", "label": "Pericope 187", "shape": "dot", "size": 15, "title": "Pericope 187\nDominant: Source 1 (99.6%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P188", "label": "Pericope 188", "shape": "dot", "size": 15, "title": "Pericope 188\nDominant: Source 3 (99.8%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P189", "label": "HYBRID: Pericope 189", "shape": "dot", "size": 30, "title": "Pericope 189\nDominant: Source 1 (33.3%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P190", "label": "Pericope 190", "shape": "dot", "size": 15, "title": "Pericope 190\nDominant: Source 1 (99.2%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P191", "label": "Pericope 191", "shape": "dot", "size": 15, "title": "Pericope 191\nDominant: Source 3 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P192", "label": "Pericope 192", "shape": "dot", "size": 15, "title": "Pericope 192\nDominant: Source 1 (98.3%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P193", "label": "HYBRID: Pericope 193", "shape": "dot", "size": 30, "title": "Pericope 193\nDominant: Source 1 (33.3%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P194", "label": "Pericope 194", "shape": "dot", "size": 15, "title": "Pericope 194\nDominant: Source 2 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P195", "label": "Pericope 195", "shape": "dot", "size": 15, "title": "Pericope 195\nDominant: Source 1 (99.5%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P196", "label": "Pericope 196", "shape": "dot", "size": 15, "title": "Pericope 196\nDominant: Source 3 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P197", "label": "Pericope 197", "shape": "dot", "size": 15, "title": "Pericope 197\nDominant: Source 3 (98.4%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P198", "label": "Pericope 198", "shape": "dot", "size": 15, "title": "Pericope 198\nDominant: Source 1 (99.2%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P199", "label": "Pericope 199", "shape": "dot", "size": 15, "title": "Pericope 199\nDominant: Source 1 (99.5%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P200", "label": "Pericope 200", "shape": "dot", "size": 15, "title": "Pericope 200\nDominant: Source 1 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P201", "label": "Pericope 201", "shape": "dot", "size": 15, "title": "Pericope 201\nDominant: Source 1 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P202", "label": "Pericope 202", "shape": "dot", "size": 15, "title": "Pericope 202\nDominant: Source 2 (99.2%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P203", "label": "Pericope 203", "shape": "dot", "size": 15, "title": "Pericope 203\nDominant: Source 3 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P204", "label": "Pericope 204", "shape": "dot", "size": 15, "title": "Pericope 204\nDominant: Source 3 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P205", "label": "Pericope 205", "shape": "dot", "size": 15, "title": "Pericope 205\nDominant: Source 3 (99.4%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P206", "label": "Pericope 206", "shape": "dot", "size": 15, "title": "Pericope 206\nDominant: Source 2 (99.5%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P207", "label": "Pericope 207", "shape": "dot", "size": 15, "title": "Pericope 207\nDominant: Source 3 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P208", "label": "Pericope 208", "shape": "dot", "size": 15, "title": "Pericope 208\nDominant: Source 3 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P209", "label": "Pericope 209", "shape": "dot", "size": 15, "title": "Pericope 209\nDominant: Source 3 (99.3%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P210", "label": "Pericope 210", "shape": "dot", "size": 15, "title": "Pericope 210\nDominant: Source 3 (98.8%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P211", "label": "Pericope 211", "shape": "dot", "size": 15, "title": "Pericope 211\nDominant: Source 1 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P212", "label": "Pericope 212", "shape": "dot", "size": 15, "title": "Pericope 212\nDominant: Source 2 (99.5%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P214", "label": "Pericope 214", "shape": "dot", "size": 15, "title": "Pericope 214\nDominant: Source 3 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P215", "label": "Pericope 215", "shape": "dot", "size": 15, "title": "Pericope 215\nDominant: Source 2 (99.8%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P217", "label": "Pericope 217", "shape": "dot", "size": 15, "title": "Pericope 217\nDominant: Source 1 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P218", "label": "Pericope 218", "shape": "dot", "size": 15, "title": "Pericope 218\nDominant: Source 2 (99.0%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P219", "label": "Pericope 219", "shape": "dot", "size": 15, "title": "Pericope 219\nDominant: Source 2 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P220", "label": "Pericope 220", "shape": "dot", "size": 15, "title": "Pericope 220\nDominant: Source 3 (99.5%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P221", "label": "Pericope 221", "shape": "dot", "size": 15, "title": "Pericope 221\nDominant: Source 3 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P222", "label": "Pericope 222", "shape": "dot", "size": 15, "title": "Pericope 222\nDominant: Source 1 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P223", "label": "Pericope 223", "shape": "dot", "size": 15, "title": "Pericope 223\nDominant: Source 1 (99.4%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P224", "label": "HYBRID: Pericope 224", "shape": "dot", "size": 30, "title": "Pericope 224\nDominant: Source 1 (33.3%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P225", "label": "Pericope 225", "shape": "dot", "size": 15, "title": "Pericope 225\nDominant: Source 1 (99.2%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P226", "label": "Pericope 226", "shape": "dot", "size": 15, "title": "Pericope 226\nDominant: Source 2 (99.1%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P228", "label": "Pericope 228", "shape": "dot", "size": 15, "title": "Pericope 228\nDominant: Source 3 (99.9%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P229", "label": "Pericope 229", "shape": "dot", "size": 15, "title": "Pericope 229\nDominant: Source 2 (99.2%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P230", "label": "Pericope 230", "shape": "dot", "size": 15, "title": "Pericope 230\nDominant: Source 2 (99.1%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P231", "label": "Pericope 231", "shape": "dot", "size": 15, "title": "Pericope 231\nDominant: Source 1 (99.1%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P232", "label": "Pericope 232", "shape": "dot", "size": 15, "title": "Pericope 232\nDominant: Source 2 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P233", "label": "Pericope 233", "shape": "dot", "size": 15, "title": "Pericope 233\nDominant: Source 1 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P234", "label": "Pericope 234", "shape": "dot", "size": 15, "title": "Pericope 234\nDominant: Source 3 (99.2%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P235", "label": "Pericope 235", "shape": "dot", "size": 15, "title": "Pericope 235\nDominant: Source 1 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P236", "label": "Pericope 236", "shape": "dot", "size": 15, "title": "Pericope 236\nDominant: Source 1 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P237", "label": "Pericope 237", "shape": "dot", "size": 15, "title": "Pericope 237\nDominant: Source 3 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P251", "label": "Pericope 251", "shape": "dot", "size": 15, "title": "Pericope 251\nDominant: Source 3 (98.0%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P252", "label": "Pericope 252", "shape": "dot", "size": 15, "title": "Pericope 252\nDominant: Source 3 (98.0%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P253", "label": "Pericope 253", "shape": "dot", "size": 15, "title": "Pericope 253\nDominant: Source 3 (99.5%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P254", "label": "HYBRID: Pericope 254", "shape": "dot", "size": 30, "title": "Pericope 254\nDominant: Source 1 (33.3%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P255", "label": "Pericope 255", "shape": "dot", "size": 15, "title": "Pericope 255\nDominant: Source 2 (99.9%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P256", "label": "Pericope 256", "shape": "dot", "size": 15, "title": "Pericope 256\nDominant: Source 2 (97.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P262", "label": "Pericope 262", "shape": "dot", "size": 15, "title": "Pericope 262\nDominant: Source 3 (99.5%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P263", "label": "Pericope 263", "shape": "dot", "size": 15, "title": "Pericope 263\nDominant: Source 1 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P264", "label": "Pericope 264", "shape": "dot", "size": 15, "title": "Pericope 264\nDominant: Source 1 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P265", "label": "Pericope 265", "shape": "dot", "size": 15, "title": "Pericope 265\nDominant: Source 3 (99.8%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P269", "label": "HYBRID: Pericope 269", "shape": "dot", "size": 30, "title": "Pericope 269\nDominant: Source 1 (33.3%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P270", "label": "Pericope 270", "shape": "dot", "size": 15, "title": "Pericope 270\nDominant: Source 1 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P271", "label": "Pericope 271", "shape": "dot", "size": 15, "title": "Pericope 271\nDominant: Source 1 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P272", "label": "Pericope 272", "shape": "dot", "size": 15, "title": "Pericope 272\nDominant: Source 3 (99.7%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P273", "label": "HYBRID: Pericope 273", "shape": "dot", "size": 30, "title": "Pericope 273\nDominant: Source 1 (33.3%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P274", "label": "Pericope 274", "shape": "dot", "size": 15, "title": "Pericope 274\nDominant: Source 2 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P275", "label": "Pericope 275", "shape": "dot", "size": 15, "title": "Pericope 275\nDominant: Source 1 (99.7%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P276", "label": "HYBRID: Pericope 276", "shape": "dot", "size": 30, "title": "Pericope 276\nDominant: Source 1 (33.3%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P277", "label": "Pericope 277", "shape": "dot", "size": 15, "title": "Pericope 277\nDominant: Source 3 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P278", "label": "Pericope 278", "shape": "dot", "size": 15, "title": "Pericope 278\nDominant: Source 1 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P279", "label": "Pericope 279", "shape": "dot", "size": 15, "title": "Pericope 279\nDominant: Source 3 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P280", "label": "Pericope 280", "shape": "dot", "size": 15, "title": "Pericope 280\nDominant: Source 3 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P281", "label": "Pericope 281", "shape": "dot", "size": 15, "title": "Pericope 281\nDominant: Source 3 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P282", "label": "Pericope 282", "shape": "dot", "size": 15, "title": "Pericope 282\nDominant: Source 1 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P283", "label": "Pericope 283", "shape": "dot", "size": 15, "title": "Pericope 283\nDominant: Source 1 (99.4%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P284", "label": "Pericope 284", "shape": "dot", "size": 15, "title": "Pericope 284\nDominant: Source 2 (99.4%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P285", "label": "HYBRID: Pericope 285", "shape": "dot", "size": 30, "title": "Pericope 285\nDominant: Source 1 (33.3%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P286", "label": "Pericope 286", "shape": "dot", "size": 15, "title": "Pericope 286\nDominant: Source 3 (99.9%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P287", "label": "HYBRID: Pericope 287", "shape": "dot", "size": 30, "title": "Pericope 287\nDominant: Source 1 (33.3%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P288", "label": "Pericope 288", "shape": "dot", "size": 15, "title": "Pericope 288\nDominant: Source 1 (99.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P289", "label": "Pericope 289", "shape": "dot", "size": 15, "title": "Pericope 289\nDominant: Source 1 (99.7%)"}, {"color": "#f9ca24", "font": {"color": "white"}, "id": "P290", "label": "HYBRID: Pericope 290", "shape": "dot", "size": 30, "title": "Pericope 290\nDominant: Source 1 (33.3%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P291", "label": "Pericope 291", "shape": "dot", "size": 15, "title": "Pericope 291\nDominant: Source 1 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P292", "label": "Pericope 292", "shape": "dot", "size": 15, "title": "Pericope 292\nDominant: Source 2 (99.6%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P293", "label": "Pericope 293", "shape": "dot", "size": 15, "title": "Pericope 293\nDominant: Source 2 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P294", "label": "Pericope 294", "shape": "dot", "size": 15, "title": "Pericope 294\nDominant: Source 1 (98.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P295", "label": "Pericope 295", "shape": "dot", "size": 15, "title": "Pericope 295\nDominant: Source 2 (99.5%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P296", "label": "Pericope 296", "shape": "dot", "size": 15, "title": "Pericope 296\nDominant: Source 3 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P297", "label": "Pericope 297", "shape": "dot", "size": 15, "title": "Pericope 297\nDominant: Source 2 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P298", "label": "Pericope 298", "shape": "dot", "size": 15, "title": "Pericope 298\nDominant: Source 3 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P299", "label": "Pericope 299", "shape": "dot", "size": 15, "title": "Pericope 299\nDominant: Source 3 (99.9%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P300", "label": "Pericope 300", "shape": "dot", "size": 15, "title": "Pericope 300\nDominant: Source 2 (99.9%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P301", "label": "Pericope 301", "shape": "dot", "size": 15, "title": "Pericope 301\nDominant: Source 2 (99.0%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P305", "label": "Pericope 305", "shape": "dot", "size": 15, "title": "Pericope 305\nDominant: Source 2 (98.4%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P306", "label": "Pericope 306", "shape": "dot", "size": 15, "title": "Pericope 306\nDominant: Source 3 (99.9%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P307", "label": "Pericope 307", "shape": "dot", "size": 15, "title": "Pericope 307\nDominant: Source 2 (99.4%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P308", "label": "Pericope 308", "shape": "dot", "size": 15, "title": "Pericope 308\nDominant: Source 2 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P309", "label": "Pericope 309", "shape": "dot", "size": 15, "title": "Pericope 309\nDominant: Source 3 (97.7%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P311", "label": "Pericope 311", "shape": "dot", "size": 15, "title": "Pericope 311\nDominant: Source 1 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P312", "label": "Pericope 312", "shape": "dot", "size": 15, "title": "Pericope 312\nDominant: Source 2 (99.3%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P313", "label": "Pericope 313", "shape": "dot", "size": 15, "title": "Pericope 313\nDominant: Source 3 (99.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P315", "label": "Pericope 315", "shape": "dot", "size": 15, "title": "Pericope 315\nDominant: Source 3 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P316", "label": "Pericope 316", "shape": "dot", "size": 15, "title": "Pericope 316\nDominant: Source 1 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P330", "label": "Pericope 330", "shape": "dot", "size": 15, "title": "Pericope 330\nDominant: Source 3 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P331", "label": "Pericope 331", "shape": "dot", "size": 15, "title": "Pericope 331\nDominant: Source 3 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P332", "label": "Pericope 332", "shape": "dot", "size": 15, "title": "Pericope 332\nDominant: Source 2 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P333", "label": "Pericope 333", "shape": "dot", "size": 15, "title": "Pericope 333\nDominant: Source 3 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P334", "label": "Pericope 334", "shape": "dot", "size": 15, "title": "Pericope 334\nDominant: Source 3 (96.4%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P335", "label": "Pericope 335", "shape": "dot", "size": 15, "title": "Pericope 335\nDominant: Source 2 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P336", "label": "Pericope 336", "shape": "dot", "size": 15, "title": "Pericope 336\nDominant: Source 3 (99.6%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P337", "label": "Pericope 337", "shape": "dot", "size": 15, "title": "Pericope 337\nDominant: Source 2 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P338", "label": "Pericope 338", "shape": "dot", "size": 15, "title": "Pericope 338\nDominant: Source 3 (99.6%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P339", "label": "Pericope 339", "shape": "dot", "size": 15, "title": "Pericope 339\nDominant: Source 2 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P341", "label": "Pericope 341", "shape": "dot", "size": 15, "title": "Pericope 341\nDominant: Source 1 (98.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P342", "label": "Pericope 342", "shape": "dot", "size": 15, "title": "Pericope 342\nDominant: Source 2 (99.8%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P343", "label": "Pericope 343", "shape": "dot", "size": 15, "title": "Pericope 343\nDominant: Source 2 (96.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P344", "label": "Pericope 344", "shape": "dot", "size": 15, "title": "Pericope 344\nDominant: Source 2 (96.9%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P345", "label": "Pericope 345", "shape": "dot", "size": 15, "title": "Pericope 345\nDominant: Source 3 (99.5%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P346", "label": "Pericope 346", "shape": "dot", "size": 15, "title": "Pericope 346\nDominant: Source 3 (99.6%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P347", "label": "Pericope 347", "shape": "dot", "size": 15, "title": "Pericope 347\nDominant: Source 2 (99.6%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P348", "label": "Pericope 348", "shape": "dot", "size": 15, "title": "Pericope 348\nDominant: Source 2 (98.0%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P350", "label": "Pericope 350", "shape": "dot", "size": 15, "title": "Pericope 350\nDominant: Source 1 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P351", "label": "Pericope 351", "shape": "dot", "size": 15, "title": "Pericope 351\nDominant: Source 2 (99.7%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P352", "label": "Pericope 352", "shape": "dot", "size": 15, "title": "Pericope 352\nDominant: Source 3 (99.8%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P353", "label": "Pericope 353", "shape": "dot", "size": 15, "title": "Pericope 353\nDominant: Source 1 (99.1%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P354", "label": "Pericope 354", "shape": "dot", "size": 15, "title": "Pericope 354\nDominant: Source 2 (99.6%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P355", "label": "Pericope 355", "shape": "dot", "size": 15, "title": "Pericope 355\nDominant: Source 2 (99.9%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P356", "label": "Pericope 356", "shape": "dot", "size": 15, "title": "Pericope 356\nDominant: Source 1 (99.7%)"}, {"color": "#7ed6df", "font": {"color": "white"}, "id": "P363", "label": "Pericope 363", "shape": "dot", "size": 15, "title": "Pericope 363\nDominant: Source 2 (99.8%)"}, {"color": "#badc58", "font": {"color": "white"}, "id": "P364", "label": "Pericope 364", "shape": "dot", "size": 15, "title": "Pericope 364\nDominant: Source 3 (99.6%)"}, {"color": "#ff7979", "font": {"color": "white"}, "id": "P365", "label": "Pericope 365", "shape": "dot", "size": 15, "title": "Pericope 365\nDominant: Source 1 (99.8%)"}]);
+                  edges = new vis.DataSet([{"from": "P1", "title": "99.4% match", "to": "Source 3", "value": 99.4}, {"from": "P2", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P3", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P4", "title": "99.9% match", "to": "Source 2", "value": 99.9}, {"from": "P5", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P7", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P8", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P9", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P10", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P11", "title": "99.1% match", "to": "Source 1", "value": 99.1}, {"from": "P12", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P13", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P14", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P15", "title": "99.6% match", "to": "Source 1", "value": 99.6}, {"from": "P16", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P18", "title": "99.3% match", "to": "Source 2", "value": 99.3}, {"from": "P19", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P20", "title": "99.9% match", "to": "Source 2", "value": 99.9}, {"from": "P30", "title": "96.4% match", "to": "Source 3", "value": 96.4}, {"from": "P32", "title": "82.7% match", "to": "Source 3", "value": 82.7}, {"from": "P34", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P35", "title": "98.9% match", "to": "Source 3", "value": 98.9}, {"from": "P36", "title": "99.9% match", "to": "Source 2", "value": 99.9}, {"from": "P39", "title": "99.7% match", "to": "Source 2", "value": 99.7}, {"from": "P40", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P41", "title": "99.9% match", "to": "Source 2", "value": 99.9}, {"from": "P48", "title": "99.4% match", "to": "Source 3", "value": 99.4}, {"from": "P53", "title": "99.1% match", "to": "Source 3", "value": 99.1}, {"from": "P54", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P55", "title": "99.7% match", "to": "Source 2", "value": 99.7}, {"from": "P56", "title": "99.5% match", "to": "Source 2", "value": 99.5}, {"from": "P60", "title": "99.7% match", "to": "Source 2", "value": 99.7}, {"from": "P61", "title": "99.5% match", "to": "Source 1", "value": 99.5}, {"from": "P62", "title": "99.5% match", "to": "Source 1", "value": 99.5}, {"from": "P63", "title": "99.5% match", "to": "Source 2", "value": 99.5}, {"from": "P69", "title": "98.8% match", "to": "Source 2", "value": 98.8}, {"from": "P76", "title": "99.1% match", "to": "Source 3", "value": 99.1}, {"from": "P78", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P80", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P81", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P82", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P83", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P84", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P85", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P86", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P87", "title": "99.3% match", "to": "Source 1", "value": 99.3}, {"from": "P88", "title": "99.5% match", "to": "Source 1", "value": 99.5}, {"from": "P92", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P93", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P94", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P96", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P97", "title": "99.2% match", "to": "Source 3", "value": 99.2}, {"from": "P98", "title": "99.6% match", "to": "Source 3", "value": 99.6}, {"from": "P99", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P100", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P103", "title": "98.0% match", "to": "Source 1", "value": 98.0}, {"from": "P104", "title": "98.5% match", "to": "Source 2", "value": 98.5}, {"from": "P105", "title": "98.5% match", "to": "Source 3", "value": 98.5}, {"from": "P106", "title": "99.7% match", "to": "Source 2", "value": 99.7}, {"from": "P107", "title": "99.9% match", "to": "Source 2", "value": 99.9}, {"from": "P109", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P110", "title": "99.4% match", "to": "Source 3", "value": 99.4}, {"from": "P111", "title": "100.0% match", "to": "Source 1", "value": 100.0}, {"from": "P112", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P113", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P115", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P116", "title": "99.1% match", "to": "Source 2", "value": 99.1}, {"from": "P122", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P123", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P124", "title": "99.7% match", "to": "Source 2", "value": 99.7}, {"from": "P125", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P126", "title": "99.5% match", "to": "Source 1", "value": 99.5}, {"from": "P127", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P130", "title": "99.5% match", "to": "Source 3", "value": 99.5}, {"from": "P131", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P132", "title": "99.5% match", "to": "Source 3", "value": 99.5}, {"from": "P133", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P134", "title": "99.1% match", "to": "Source 1", "value": 99.1}, {"from": "P135", "title": "99.4% match", "to": "Source 2", "value": 99.4}, {"from": "P136", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P137", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P138", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P139", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P142", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P143", "title": "99.5% match", "to": "Source 1", "value": 99.5}, {"from": "P144", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P145", "title": "99.4% match", "to": "Source 1", "value": 99.4}, {"from": "P146", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P147", "title": "99.9% match", "to": "Source 2", "value": 99.9}, {"from": "P148", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P153", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P154", "title": "96.4% match", "to": "Source 1", "value": 96.4}, {"from": "P155", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P156", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P158", "title": "99.6% match", "to": "Source 3", "value": 99.6}, {"from": "P159", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P160", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P161", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P162", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P163", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P164", "title": "99.5% match", "to": "Source 3", "value": 99.5}, {"from": "P165", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P166", "title": "99.5% match", "to": "Source 3", "value": 99.5}, {"from": "P167", "title": "99.3% match", "to": "Source 1", "value": 99.3}, {"from": "P168", "title": "99.7% match", "to": "Source 2", "value": 99.7}, {"from": "P169", "title": "98.9% match", "to": "Source 1", "value": 98.9}, {"from": "P170", "title": "99.6% match", "to": "Source 3", "value": 99.6}, {"from": "P171", "title": "99.4% match", "to": "Source 3", "value": 99.4}, {"from": "P172", "title": "99.2% match", "to": "Source 2", "value": 99.2}, {"from": "P173", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P175", "title": "99.5% match", "to": "Source 1", "value": 99.5}, {"from": "P176", "title": "99.7% match", "to": "Source 2", "value": 99.7}, {"from": "P177", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P178", "title": "99.5% match", "to": "Source 1", "value": 99.5}, {"from": "P179", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P180", "title": "99.6% match", "to": "Source 1", "value": 99.6}, {"from": "P181", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P183", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P184", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P185", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P186", "title": "99.7% match", "to": "Source 2", "value": 99.7}, {"from": "P187", "title": "99.6% match", "to": "Source 1", "value": 99.6}, {"from": "P188", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P189", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P190", "title": "99.2% match", "to": "Source 1", "value": 99.2}, {"from": "P191", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P192", "title": "98.3% match", "to": "Source 1", "value": 98.3}, {"from": "P193", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P194", "title": "99.9% match", "to": "Source 2", "value": 99.9}, {"from": "P195", "title": "99.5% match", "to": "Source 1", "value": 99.5}, {"from": "P196", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P197", "title": "98.4% match", "to": "Source 3", "value": 98.4}, {"from": "P198", "title": "99.2% match", "to": "Source 1", "value": 99.2}, {"from": "P199", "title": "99.5% match", "to": "Source 1", "value": 99.5}, {"from": "P200", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P201", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P202", "title": "99.2% match", "to": "Source 2", "value": 99.2}, {"from": "P203", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P204", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P205", "title": "99.4% match", "to": "Source 3", "value": 99.4}, {"from": "P206", "title": "99.5% match", "to": "Source 2", "value": 99.5}, {"from": "P207", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P208", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P209", "title": "99.3% match", "to": "Source 3", "value": 99.3}, {"from": "P210", "title": "98.8% match", "to": "Source 3", "value": 98.8}, {"from": "P211", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P212", "title": "99.5% match", "to": "Source 2", "value": 99.5}, {"from": "P214", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P215", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P217", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P218", "title": "99.0% match", "to": "Source 2", "value": 99.0}, {"from": "P219", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P220", "title": "99.5% match", "to": "Source 3", "value": 99.5}, {"from": "P221", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P222", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P223", "title": "99.4% match", "to": "Source 1", "value": 99.4}, {"from": "P224", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P225", "title": "99.2% match", "to": "Source 1", "value": 99.2}, {"from": "P226", "title": "99.1% match", "to": "Source 2", "value": 99.1}, {"from": "P228", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P229", "title": "99.2% match", "to": "Source 2", "value": 99.2}, {"from": "P230", "title": "99.1% match", "to": "Source 2", "value": 99.1}, {"from": "P231", "title": "99.1% match", "to": "Source 1", "value": 99.1}, {"from": "P232", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P233", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P234", "title": "99.2% match", "to": "Source 3", "value": 99.2}, {"from": "P235", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P236", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P237", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P251", "title": "98.0% match", "to": "Source 3", "value": 98.0}, {"from": "P252", "title": "98.0% match", "to": "Source 3", "value": 98.0}, {"from": "P253", "title": "99.5% match", "to": "Source 3", "value": 99.5}, {"from": "P254", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P255", "title": "99.9% match", "to": "Source 2", "value": 99.9}, {"from": "P256", "title": "97.8% match", "to": "Source 2", "value": 97.8}, {"from": "P262", "title": "99.5% match", "to": "Source 3", "value": 99.5}, {"from": "P263", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P264", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P265", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P269", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P270", "title": "99.6% match", "to": "Source 1", "value": 99.6}, {"from": "P271", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P272", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P273", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P274", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P275", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P276", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P277", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P278", "title": "99.9% match", "to": "Source 1", "value": 99.9}, {"from": "P279", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P280", "title": "99.7% match", "to": "Source 3", "value": 99.7}, {"from": "P281", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P282", "title": "99.6% match", "to": "Source 1", "value": 99.6}, {"from": "P283", "title": "99.4% match", "to": "Source 1", "value": 99.4}, {"from": "P284", "title": "99.4% match", "to": "Source 2", "value": 99.4}, {"from": "P285", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P286", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P287", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P288", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P289", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P290", "title": "33.3% match", "to": "Source 1", "value": 33.3}, {"from": "P291", "title": "99.8% match", "to": "Source 1", "value": 99.8}, {"from": "P292", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P293", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P294", "title": "98.8% match", "to": "Source 1", "value": 98.8}, {"from": "P295", "title": "99.5% match", "to": "Source 2", "value": 99.5}, {"from": "P296", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P297", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P298", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P299", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P300", "title": "99.9% match", "to": "Source 2", "value": 99.9}, {"from": "P301", "title": "99.0% match", "to": "Source 2", "value": 99.0}, {"from": "P305", "title": "98.4% match", "to": "Source 2", "value": 98.4}, {"from": "P306", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P307", "title": "99.4% match", "to": "Source 2", "value": 99.4}, {"from": "P308", "title": "99.7% match", "to": "Source 2", "value": 99.7}, {"from": "P309", "title": "97.7% match", "to": "Source 3", "value": 97.7}, {"from": "P311", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P312", "title": "99.3% match", "to": "Source 2", "value": 99.3}, {"from": "P313", "title": "99.9% match", "to": "Source 3", "value": 99.9}, {"from": "P315", "title": "99.6% match", "to": "Source 3", "value": 99.6}, {"from": "P316", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P330", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P331", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P332", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P333", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P334", "title": "96.4% match", "to": "Source 3", "value": 96.4}, {"from": "P335", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P336", "title": "99.6% match", "to": "Source 3", "value": 99.6}, {"from": "P337", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P338", "title": "99.6% match", "to": "Source 3", "value": 99.6}, {"from": "P339", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P341", "title": "98.8% match", "to": "Source 1", "value": 98.8}, {"from": "P342", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P343", "title": "96.7% match", "to": "Source 2", "value": 96.7}, {"from": "P344", "title": "96.9% match", "to": "Source 2", "value": 96.9}, {"from": "P345", "title": "99.5% match", "to": "Source 3", "value": 99.5}, {"from": "P346", "title": "99.6% match", "to": "Source 3", "value": 99.6}, {"from": "P347", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P348", "title": "98.0% match", "to": "Source 2", "value": 98.0}, {"from": "P350", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P351", "title": "99.7% match", "to": "Source 2", "value": 99.7}, {"from": "P352", "title": "99.8% match", "to": "Source 3", "value": 99.8}, {"from": "P353", "title": "99.1% match", "to": "Source 1", "value": 99.1}, {"from": "P354", "title": "99.6% match", "to": "Source 2", "value": 99.6}, {"from": "P355", "title": "99.9% match", "to": "Source 2", "value": 99.9}, {"from": "P356", "title": "99.7% match", "to": "Source 1", "value": 99.7}, {"from": "P363", "title": "99.8% match", "to": "Source 2", "value": 99.8}, {"from": "P364", "title": "99.6% match", "to": "Source 3", "value": 99.6}, {"from": "P365", "title": "99.8% match", "to": "Source 1", "value": 99.8}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "repulsion": {
+            "centralGravity": 0.2,
+            "damping": 0.09,
+            "nodeDistance": 150,
+            "springConstant": 0.05,
+            "springLength": 200
+        },
+        "solver": "repulsion",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

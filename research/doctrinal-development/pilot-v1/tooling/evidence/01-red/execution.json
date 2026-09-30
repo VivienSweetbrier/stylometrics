@@ -1,0 +1,24 @@
+{
+  "command": [
+    "C:\\Users\\Vivian\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_verify_pilot.PilotTests.test_valid_pilot_retains_actual_core_receipts"
+  ],
+  "cwd": "C:\\Users\\Vivian\\Desktop\\Synoptics\\research\\doctrinal-development\\pilot-v1\\tooling",
+  "env_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "test_valid_pilot_retains_actual_core_receipts (test_verify_pilot.PilotTests.test_valid_pilot_retains_actual_core_receipts) ... FAIL\n\n======================================================================\nFAIL: test_valid_pilot_retains_actual_core_receipts (test_verify_pilot.PilotTests.test_valid_pilot_retains_actual_core_receipts)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Vivian\\Desktop\\Synoptics\\research\\doctrinal-development\\pilot-v1\\tooling\\test_verify_pilot.py\", line 112, in test_valid_pilot_retains_actual_core_receipts\n    result = self.run_cli()\n             ^^^^^^^^^^^^^^\n  File \"C:\\Users\\Vivian\\Desktop\\Synoptics\\research\\doctrinal-development\\pilot-v1\\tooling\\test_verify_pilot.py\", line 101, in run_cli\n    self.assertTrue(TOOL.is_file(), 'offline verifier CLI has not been implemented')\nAssertionError: False is not true : offline verifier CLI has not been implemented\n\n----------------------------------------------------------------------\nRan 1 test in 0.112s\n\nFAILED (failures=1)\n",
+  "pre_run_sha256": {
+    "C:\\Users\\Vivian\\Desktop\\Synoptics\\research\\doctrinal-development\\pilot-v1\\tooling\\test_verify_pilot.py": "492580067b416f9bbecb5900efbe0bedb4d0c09d56fb1dc5e341ecb12fedfb84",
+    "C:\\Users\\Vivian\\Desktop\\Synoptics\\research\\doctrinal-development\\pilot-v1\\tooling\\verify_pilot.py": null,
+    "C:\\Users\\Vivian\\Desktop\\Synoptics\\research\\doctrinal-development\\pilot-v1\\PROTOCOL.md": "4a77113219fc6ed36f5974cfa191ef2a7e6e4cddd6c94ac5f74f1de587b4e6f3",
+    "C:\\Users\\Vivian\\Desktop\\Synoptics\\research\\doctrinal-development\\pilot-v1\\ARTIFACT-CONTRACT.md": "5355bf7eb13bb5afdae7f74f293d8e603b89027dab1e1416d877e120afecbad5",
+    "C:\\Users\\Vivian\\Desktop\\Synoptics\\src\\models\\quotation_verifier.py": "91ec3fdb1f55dc8e22e461606264fa5b5a092f0d153ab2d2b7e600a4838e2208"
+  }
+}

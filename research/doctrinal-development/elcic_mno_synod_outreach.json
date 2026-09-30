@@ -1,0 +1,29 @@
+{
+  "protocol": "Sweetbrier Synod Outreach",
+  "target_graph": "ELCIC (Manitoba/Northwestern Ontario Synod)",
+  "graph_isomorphism": {
+    "match_percentage": "88%",
+    "shared_nodes": [
+      "BAPTISMAL_REGENERATION",
+      "LITURGICAL_CALENDAR",
+      "REAL_PRESENCE_CONSUBSTANTIATION",
+      "APOSTOLIC_CREEDS (Nicene/Apostles)"
+    ]
+  },
+  "cliometric_vulnerability": {
+    "status": "CRITICAL",
+    "description": "The MNO Synod has high empathy but has decoupled from the strict 'checksum' of the Book of Concord. This makes them structurally identical to the 'Cultural Catholic' node, leaving them highly vulnerable to the Secular Manichaean Swarm (e.g., altering biological anthropology out of a misplaced desire to alleviate psychological distress, which structurally degrades the network)."
+  },
+  "sweetbrier_optimizations": [
+    {
+      "optimization_vector": "The Confessional Re-Anchor",
+      "action": "Do not force immediate Catholic conversion. Instead, use Sweetbrier data to prove to the MNO Synod that adhering strictly to historic Lutheran Confessions (LCMS-style boundaries) is the only mathematical way to prevent demographic collapse.",
+      "expected_outcome": "Restores network tension. Halts the semantic drift."
+    },
+    {
+      "optimization_vector": "The Subsidiarity Bridge",
+      "action": "Introduce Catholic Social Teaching (Subsidiarity) as a shared framework for radical hospitality. This satisfies their progressive empathy drive but redirects it into structurally sound, physically embodied community care (like the Mennonites) rather than ideological capitulation.",
+      "expected_outcome": "Provides the 'Greatest Common Good' without breaking Dogma."
+    }
+  ]
+}

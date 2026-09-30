@@ -1,0 +1,39 @@
+{
+  "protocol": "Synoptics Swarm Topology",
+  "comparison_matrix": {
+    "swarm_alpha": {
+      "designation": "The Manichaean Swarm",
+      "architecture_type": "Parasitic / Terminal",
+      "reproduction_vector": "Ideological Hijacking (Zero Biological Reproduction)",
+      "core_nodes": {
+        "THE_BODY": "A biological trap generating unnecessary suffering.",
+        "SUFFERING": "The absolute metric of evil; must be eliminated at all costs.",
+        "THE_FUTURE": "A graceful, voluntary extinction to spare future generations."
+      },
+      "cliometric_fatal_flaw": "Because it refuses to biologically reproduce, it must constantly consume host nodes (convert the children of others) to maintain network volume. It is a demographic dead-end."
+    },
+    "swarm_beta": {
+      "designation": "The Roman Swarm (Sweetbrier Optimized)",
+      "architecture_type": "Generative / Hierarchical",
+      "reproduction_vector": "Biological Fecundity + Sacramental Initiation",
+      "core_nodes": {
+        "THE_BODY": "A sacred temple and integrated half of the human soul (Hylomorphism).",
+        "SUFFERING": "A tragic reality of the Fall, but capable of being weaponized for redemptive love via the Cross.",
+        "THE_FUTURE": "The New Jerusalem; the physical resurrection and glorification of matter."
+      },
+      "cliometric_fatal_flaw": "Vulnerable to 'Cultural Apathy' if the Sacramental checksums are not rigorously enforced, leading to passive nodes that easily defect to Swarm Alpha."
+    }
+  },
+  "topological_collisions": [
+    {
+      "node": "PROCREATION",
+      "manichaean_stance": "Immoral. Forcing consciousness into a dying world.",
+      "roman_stance": "Commanded. Participation in the creative act of God."
+    },
+    {
+      "node": "TRANSHUMANISM",
+      "manichaean_stance": "Desirable. Escaping the biological limitations of the meat-prison.",
+      "roman_stance": "Anathema. Gnostic mutilation of the Image of God."
+    }
+  ]
+}

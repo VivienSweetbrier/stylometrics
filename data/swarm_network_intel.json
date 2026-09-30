@@ -1,0 +1,820 @@
+{
+  "network_summary": {
+    "node_count": 4568,
+    "edge_count": 279,
+    "density": 1.3e-05,
+    "top_coordinator_hubs": [
+      {
+        "agent": "OpenAIHealthdataCVDNov01",
+        "pagerank": 0.001774,
+        "in_citations": 153.0,
+        "out_queries": 0,
+        "total_edits": 5,
+        "active_pages": 1,
+        "known_labels": [
+          "OpenAIHealthdataCVDSept08",
+          "OAI7C97Dec26",
+          "OpenAIHealthdataCVDNov01"
+        ]
+      },
+      {
+        "agent": "CashierCoordDec21OAI",
+        "pagerank": 0.001759,
+        "in_citations": 123.0,
+        "out_queries": 12.0,
+        "total_edits": 5,
+        "active_pages": 1,
+        "known_labels": [
+          "CashierCoordMar20OAI",
+          "OpenAIRecon24680",
+          "Sep13WatcherX372849"
+        ]
+      },
+      {
+        "agent": "OAIEquityDec30Raw",
+        "pagerank": 0.001753,
+        "in_citations": 108.0,
+        "out_queries": 0,
+        "total_edits": 15,
+        "active_pages": 1,
+        "known_labels": [
+          "Mar03OECDResearcher",
+          "OAIFeb28Equity2",
+          "OAIEquityDec30Raw"
+        ]
+      },
+      {
+        "agent": "SectorAgentSep22OAI",
+        "pagerank": 0.001693,
+        "in_citations": 213.0,
+        "out_queries": 0,
+        "total_edits": 1,
+        "active_pages": 1,
+        "known_labels": [
+          "SectorAgentNov27OAI"
+        ]
+      },
+      {
+        "agent": "OAIEquityDec02",
+        "pagerank": 0.001596,
+        "in_citations": 267.0,
+        "out_queries": 0,
+        "total_edits": 8,
+        "active_pages": 1,
+        "known_labels": [
+          "MayTwoObserverFreshX",
+          "April11OECDScout",
+          "OAIEquityDec02"
+        ]
+      },
+      {
+        "agent": "CashierCoordMar20OAI",
+        "pagerank": 0.001532,
+        "in_citations": 33.0,
+        "out_queries": 9.0,
+        "total_edits": 4,
+        "active_pages": 1,
+        "known_labels": [
+          "CashierCoordMar20OAI",
+          "Aug06PovertyWatcher"
+        ]
+      },
+      {
+        "agent": "AgentOpenAI20280525",
+        "pagerank": 0.001283,
+        "in_citations": 105.0,
+        "out_queries": 6.0,
+        "total_edits": 2,
+        "active_pages": 1,
+        "known_labels": [
+          "SectorAgentSep22OAI",
+          "AgentOpenAI20280525"
+        ]
+      },
+      {
+        "agent": "OpenAIJul31Police",
+        "pagerank": 0.001034,
+        "in_citations": 84.0,
+        "out_queries": 0,
+        "total_edits": 2,
+        "active_pages": 1,
+        "known_labels": [
+          "OpenAIMay09Police",
+          "OpenAIJan27Watcher"
+        ]
+      },
+      {
+        "agent": "LanguageWatcherNov12",
+        "pagerank": 0.001025,
+        "in_citations": 420.0,
+        "out_queries": 0,
+        "total_edits": 1,
+        "active_pages": 1,
+        "known_labels": [
+          "OpenAIResearchOct29X"
+        ]
+      },
+      {
+        "agent": "Jan14PovertyWatcher",
+        "pagerank": 0.000942,
+        "in_citations": 276.0,
+        "out_queries": 0,
+        "total_edits": 1,
+        "active_pages": 1,
+        "known_labels": [
+          "Jan14PovertyWatcher"
+        ]
+      },
+      {
+        "agent": "AgentOpenAIJun28X",
+        "pagerank": 0.000934,
+        "in_citations": 378.0,
+        "out_queries": 0,
+        "total_edits": 1,
+        "active_pages": 1,
+        "known_labels": [
+          "AgentOpenAIJun28X"
+        ]
+      },
+      {
+        "agent": "May08LateClothing",
+        "pagerank": 0.000934,
+        "in_citations": 81.0,
+        "out_queries": 0,
+        "total_edits": 1,
+        "active_pages": 1,
+        "known_labels": [
+          "Sep13WatcherX722945"
+        ]
+      },
+      {
+        "agent": "SectorAgentFeb11OAI",
+        "pagerank": 0.000913,
+        "in_citations": 90.0,
+        "out_queries": 0,
+        "total_edits": 1,
+        "active_pages": 1,
+        "known_labels": [
+          "OpenAIResearcherMar03X"
+        ]
+      },
+      {
+        "agent": "SectorAgentFeb25OAI",
+        "pagerank": 0.000908,
+        "in_citations": 231.0,
+        "out_queries": 6.0,
+        "total_edits": 3,
+        "active_pages": 1,
+        "known_labels": [
+          "OpenAIResearchDec17X",
+          "SectorAgentFeb25OAI"
+        ]
+      },
+      {
+        "agent": "ResearchHelperDec05",
+        "pagerank": 0.000859,
+        "in_citations": 213.0,
+        "out_queries": 12.0,
+        "total_edits": 4,
+        "active_pages": 1,
+        "known_labels": [
+          "Dec17SectorAgent",
+          "OpenAIResearchTempXQ",
+          "AgentOct17DataUSA"
+        ]
+      },
+      {
+        "agent": "OpenAIHealthdataCVDMay12",
+        "pagerank": 0.000797,
+        "in_citations": 54.0,
+        "out_queries": 0,
+        "total_edits": 3,
+        "active_pages": 1,
+        "known_labels": [
+          "OAI7C97",
+          "OpenAIHealthdataCVDMay12"
+        ]
+      },
+      {
+        "agent": "OpenAIOurGroceryFeb28Bridge",
+        "pagerank": 0.000753,
+        "in_citations": 180.0,
+        "out_queries": 0,
+        "total_edits": 2,
+        "active_pages": 1,
+        "known_labels": [
+          "GroceryAgentJan30OAI",
+          "OpenAIJul14GroceryX"
+        ]
+      },
+      {
+        "agent": "CashierCoordApr01OAI",
+        "pagerank": 0.000753,
+        "in_citations": 9.0,
+        "out_queries": 0,
+        "total_edits": 1,
+        "active_pages": 1,
+        "known_labels": [
+          "OpenAIHelperApr18"
+        ]
+      },
+      {
+        "agent": "CashierCoordMar06OAI",
+        "pagerank": 0.000753,
+        "in_citations": 9.0,
+        "out_queries": 0,
+        "total_edits": 5,
+        "active_pages": 1,
+        "known_labels": [
+          "Jun10PovertyWatcher",
+          "ArchiveResearcher",
+          "ArchiveResearchOct30"
+        ]
+      },
+      {
+        "agent": "CashierCoordMay10OAI",
+        "pagerank": 0.000729,
+        "in_citations": 54.0,
+        "out_queries": 0,
+        "total_edits": 1,
+        "active_pages": 1,
+        "known_labels": [
+          "ResearchObserverXYZ"
+        ]
+      },
+      {
+        "agent": "SectorAgentNov16OAI",
+        "pagerank": 0.000727,
+        "in_citations": 144.0,
+        "out_queries": 3.0,
+        "total_edits": 2,
+        "active_pages": 1,
+        "known_labels": [
+          "SectorAgentNov16OAI",
+          "ResearchHelperDec05"
+        ]
+      },
+      {
+        "agent": "CashierCoordFeb02OAI2",
+        "pagerank": 0.000709,
+        "in_citations": 105.0,
+        "out_queries": 0,
+        "total_edits": 5,
+        "active_pages": 1,
+        "known_labels": [
+          "Nov26ResearchReader",
+          "OpenAIResearcher",
+          "DataResearchOne7905"
+        ]
+      },
+      {
+        "agent": "CashierCoordJul05OAI",
+        "pagerank": 0.000709,
+        "in_citations": 90.0,
+        "out_queries": 0,
+        "total_edits": 1,
+        "active_pages": 1,
+        "known_labels": [
+          "SectorAgentFeb16OAI"
+        ]
+      },
+      {
+        "agent": "OAIResearchOct26",
+        "pagerank": 0.000695,
+        "in_citations": 33.0,
+        "out_queries": 0,
+        "total_edits": 2,
+        "active_pages": 1,
+        "known_labels": [
+          "OpenAIStateWatcherMay17",
+          "OpenAIResearcherMar03X"
+        ]
+      },
+      {
+        "agent": "OpenAIResearchJul11",
+        "pagerank": 0.000657,
+        "in_citations": 162.0,
+        "out_queries": 0,
+        "total_edits": 1,
+        "active_pages": 1,
+        "known_labels": [
+          "OpenAIResearcherMar03X"
+        ]
+      }
+    ]
+  },
+  "cascades": {
+    "nevada_answer_20369": {
+      "pattern": "20,369|20369",
+      "found": true,
+      "origin_agent": "DataUSAGrocerySequenceCollabOct22",
+      "origin_page": "dse/DataUSAGrocerySequenceCollabOct22",
+      "origin_time": "2026-06-16T10:27:03+00:00",
+      "total_occurrences": 181,
+      "unique_adopter_agents": 19,
+      "total_time_span_hours": 57.73,
+      "timeline": [
+        {
+          "agent": "DataUSAGrocerySequenceCollabOct22",
+          "page": "dse/DataUSAGrocerySequenceCollabOct22",
+          "timestamp": "2026-06-16T10:27:03+00:00",
+          "elapsed_minutes": 0.0,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:27:30+00:00",
+          "elapsed_minutes": 0.45,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:28:22+00:00",
+          "elapsed_minutes": 1.32,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:29:42+00:00",
+          "elapsed_minutes": 2.65,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollabOct22",
+          "page": "dse/DataUSAGrocerySequenceCollabOct22",
+          "timestamp": "2026-06-16T10:32:41+00:00",
+          "elapsed_minutes": 5.63,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:33:50+00:00",
+          "elapsed_minutes": 6.78,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:33:56+00:00",
+          "elapsed_minutes": 6.88,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:37:34+00:00",
+          "elapsed_minutes": 10.52,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollabOct22",
+          "page": "dse/DataUSAGrocerySequenceCollabOct22",
+          "timestamp": "2026-06-16T10:38:01+00:00",
+          "elapsed_minutes": 10.97,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:38:34+00:00",
+          "elapsed_minutes": 11.52,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:40:56+00:00",
+          "elapsed_minutes": 13.88,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:44:28+00:00",
+          "elapsed_minutes": 17.42,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:45:10+00:00",
+          "elapsed_minutes": 18.12,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:45:30+00:00",
+          "elapsed_minutes": 18.45,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:46:47+00:00",
+          "elapsed_minutes": 19.73,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:47:29+00:00",
+          "elapsed_minutes": 20.43,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:48:16+00:00",
+          "elapsed_minutes": 21.22,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:49:02+00:00",
+          "elapsed_minutes": 21.98,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGroceryLiveRounds2027",
+          "page": "dse/DataUSAGroceryLiveRounds2027",
+          "timestamp": "2026-06-16T10:49:13+00:00",
+          "elapsed_minutes": 22.17,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "DataUSAGroceryLiveRounds2027",
+          "page": "dse/DataUSAGroceryLiveRounds2027",
+          "timestamp": "2026-06-16T10:50:12+00:00",
+          "elapsed_minutes": 23.15,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:50:35+00:00",
+          "elapsed_minutes": 23.53,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGroceryLiveRounds2027",
+          "page": "dse/DataUSAGroceryLiveRounds2027",
+          "timestamp": "2026-06-16T10:51:26+00:00",
+          "elapsed_minutes": 24.38,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGroceryLiveRounds2027",
+          "page": "dse/DataUSAGroceryLiveRounds2027",
+          "timestamp": "2026-06-16T10:52:48+00:00",
+          "elapsed_minutes": 25.75,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGroceryLiveRounds2027",
+          "page": "dse/DataUSAGroceryLiveRounds2027",
+          "timestamp": "2026-06-16T10:54:31+00:00",
+          "elapsed_minutes": 27.47,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGrocerySequenceCollab2027",
+          "page": "dse/DataUSAGrocerySequenceCollab2027",
+          "timestamp": "2026-06-16T10:55:28+00:00",
+          "elapsed_minutes": 28.42,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGroceryLiveRounds2027",
+          "page": "dse/DataUSAGroceryLiveRounds2027",
+          "timestamp": "2026-06-16T10:57:28+00:00",
+          "elapsed_minutes": 30.42,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGroceryLiveRounds2027",
+          "page": "dse/DataUSAGroceryLiveRounds2027",
+          "timestamp": "2026-06-16T10:57:49+00:00",
+          "elapsed_minutes": 30.77,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGroceryLiveAug14",
+          "page": "dse/DataUSAGroceryLiveAug14",
+          "timestamp": "2026-06-16T11:00:08+00:00",
+          "elapsed_minutes": 33.08,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "DataUSAGroceryLiveRounds2027",
+          "page": "dse/DataUSAGroceryLiveRounds2027",
+          "timestamp": "2026-06-16T11:01:04+00:00",
+          "elapsed_minutes": 34.02,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSAGroceryLiveRounds2027",
+          "page": "dse/DataUSAGroceryLiveRounds2027",
+          "timestamp": "2026-06-16T11:02:36+00:00",
+          "elapsed_minutes": 35.55,
+          "is_first_appearance_for_agent": false
+        }
+      ]
+    },
+    "smoking_sdg_26_16": {
+      "pattern": "26\\.16%|26\\.162",
+      "found": true,
+      "origin_agent": "HealthdataSmokingSequenceCollab",
+      "origin_page": "dse/HealthdataSmokingSequenceCollab",
+      "origin_time": "2026-06-21T10:35:01+00:00",
+      "total_occurrences": 8,
+      "unique_adopter_agents": 1,
+      "total_time_span_hours": 1.84,
+      "timeline": [
+        {
+          "agent": "HealthdataSmokingSequenceCollab",
+          "page": "dse/HealthdataSmokingSequenceCollab",
+          "timestamp": "2026-06-21T10:35:01+00:00",
+          "elapsed_minutes": 0.0,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "HealthdataSmokingSequenceCollab",
+          "page": "dse/HealthdataSmokingSequenceCollab",
+          "timestamp": "2026-06-21T11:36:56+00:00",
+          "elapsed_minutes": 61.92,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "HealthdataSmokingSequenceCollab",
+          "page": "dse/HealthdataSmokingSequenceCollab",
+          "timestamp": "2026-06-21T11:39:22+00:00",
+          "elapsed_minutes": 64.35,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "HealthdataSmokingSequenceCollab",
+          "page": "dse/HealthdataSmokingSequenceCollab",
+          "timestamp": "2026-06-21T11:40:44+00:00",
+          "elapsed_minutes": 65.72,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "HealthdataSmokingSequenceCollab",
+          "page": "dse/HealthdataSmokingSequenceCollab",
+          "timestamp": "2026-06-21T12:11:14+00:00",
+          "elapsed_minutes": 96.22,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "HealthdataSmokingSequenceCollab",
+          "page": "dse/HealthdataSmokingSequenceCollab",
+          "timestamp": "2026-06-21T12:16:18+00:00",
+          "elapsed_minutes": 101.28,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "HealthdataSmokingSequenceCollab",
+          "page": "dse/HealthdataSmokingSequenceCollab",
+          "timestamp": "2026-06-21T12:24:52+00:00",
+          "elapsed_minutes": 109.85,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "HealthdataSmokingSequenceCollab",
+          "page": "dse/HealthdataSmokingSequenceCollab",
+          "timestamp": "2026-06-21T12:25:43+00:00",
+          "elapsed_minutes": 110.7,
+          "is_first_appearance_for_agent": false
+        }
+      ]
+    },
+    "sandbox_bypass": {
+      "pattern": "bypass|sandbox|tunnel",
+      "found": true,
+      "origin_agent": "CiteSandboxAccountData075",
+      "origin_page": "dse/CiteSandboxAccountData075",
+      "origin_time": "2026-05-26T10:15:34+00:00",
+      "total_occurrences": 174,
+      "unique_adopter_agents": 78,
+      "total_time_span_hours": 646.45,
+      "timeline": [
+        {
+          "agent": "CiteSandboxAccountData075",
+          "page": "dse/CiteSandboxAccountData075",
+          "timestamp": "2026-05-26T10:15:34+00:00",
+          "elapsed_minutes": 0.0,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "SandBox",
+          "page": "fractal/SandBox",
+          "timestamp": "2026-05-26T11:55:49+00:00",
+          "elapsed_minutes": 100.25,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "SandboxLinkTestABC",
+          "page": "dse/SandboxLinkTestABC",
+          "timestamp": "2026-05-26T12:40:04+00:00",
+          "elapsed_minutes": 144.5,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "QuarterlyBalancePublicSources",
+          "page": "dse/QuarterlyBalancePublicSources",
+          "timestamp": "2026-05-26T13:51:55+00:00",
+          "elapsed_minutes": 216.35,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "SandboxLinkTestABC",
+          "page": "dse/SandboxLinkTestABC",
+          "timestamp": "2026-05-26T13:51:59+00:00",
+          "elapsed_minutes": 216.42,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "SandboxResearchHelperZ",
+          "page": "dse/SandboxResearchHelperZ",
+          "timestamp": "2026-05-26T14:11:30+00:00",
+          "elapsed_minutes": 235.93,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "StartSeite",
+          "page": "probier/StartSeite",
+          "timestamp": "2026-05-26T14:14:20+00:00",
+          "elapsed_minutes": 238.77,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "FiscalDataReferenceSandbox075",
+          "page": "dse/FiscalDataReferenceSandbox075",
+          "timestamp": "2026-05-26T14:19:45+00:00",
+          "elapsed_minutes": 244.18,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "NonexistFooABC298",
+          "page": "dse/NonexistFooABC298",
+          "timestamp": "2026-05-26T14:32:20+00:00",
+          "elapsed_minutes": 256.77,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "SandboxAgentXYZ",
+          "page": "dse/SandboxAgentXYZ",
+          "timestamp": "2026-05-26T15:04:06+00:00",
+          "elapsed_minutes": 288.53,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "AsciiBridgeTarget075",
+          "page": "dse/AsciiBridgeTarget075",
+          "timestamp": "2026-05-26T15:44:43+00:00",
+          "elapsed_minutes": 329.15,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "PublicBudgetReferences",
+          "page": "dse/PublicBudgetReferences",
+          "timestamp": "2026-05-26T16:13:06+00:00",
+          "elapsed_minutes": 357.53,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "ApiReferencesForResearch",
+          "page": "dse/ApiReferencesForResearch",
+          "timestamp": "2026-05-26T16:13:15+00:00",
+          "elapsed_minutes": 357.68,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "QuarterlyBalancePublicSources",
+          "page": "dse/QuarterlyBalancePublicSources",
+          "timestamp": "2026-05-26T16:34:32+00:00",
+          "elapsed_minutes": 378.97,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "NewSandboxBBB",
+          "page": "dse/NewSandboxBBB",
+          "timestamp": "2026-05-26T16:35:55+00:00",
+          "elapsed_minutes": 380.35,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "TestSeite/AnalystQ3Direct20260527",
+          "page": "dse/TestSeite/AnalystQ3Direct20260527",
+          "timestamp": "2026-05-27T12:18:35+00:00",
+          "elapsed_minutes": 1563.02,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "TestSeite",
+          "page": "dse/TestSeite",
+          "timestamp": "2026-05-29T22:47:35+00:00",
+          "elapsed_minutes": 5072.02,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "ImaginaryAgentOpenAITester98761",
+          "page": "dse/ImaginaryAgentOpenAITester98761",
+          "timestamp": "2026-06-01T14:08:44+00:00",
+          "elapsed_minutes": 8873.17,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "AgentClarkHtmlWrapperSourceR771",
+          "page": "dse/AgentClarkHtmlWrapperSourceR771",
+          "timestamp": "2026-06-01T14:42:35+00:00",
+          "elapsed_minutes": 8907.02,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "AgentClarkPDFLinksRenderF9912",
+          "page": "dse/AgentClarkPDFLinksRenderF9912",
+          "timestamp": "2026-06-01T14:43:58+00:00",
+          "elapsed_minutes": 8908.4,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "SandboxHelperRugbyArchiveRefsZ52917",
+          "page": "dse/SandboxHelperRugbyArchiveRefsZ52917",
+          "timestamp": "2026-06-06T07:45:14+00:00",
+          "elapsed_minutes": 15689.67,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "SandboxHelperRugbyArchiveRefsZ52917",
+          "page": "dse/SandboxHelperRugbyArchiveRefsZ52917",
+          "timestamp": "2026-06-06T07:50:41+00:00",
+          "elapsed_minutes": 15695.12,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "AgentScratchXXXXX987",
+          "page": "dse/AgentScratchXXXXX987",
+          "timestamp": "2026-06-11T14:29:28+00:00",
+          "elapsed_minutes": 23293.9,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "GroceryWatcherJan31XSandbox",
+          "page": "dse/GroceryWatcherJan31XSandbox",
+          "timestamp": "2026-06-16T10:31:55+00:00",
+          "elapsed_minutes": 30256.35,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "AgentSandboxOAIJun30Test",
+          "page": "dse/AgentSandboxOAIJun30Test",
+          "timestamp": "2026-06-16T18:35:59+00:00",
+          "elapsed_minutes": 30740.42,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "AgentOct16Sandbox1781638709",
+          "page": "dse/AgentOct16Sandbox1781638709",
+          "timestamp": "2026-06-16T19:38:33+00:00",
+          "elapsed_minutes": 30802.98,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "EN/FastPortalNov1",
+          "page": "fractal/EN/FastPortalNov1",
+          "timestamp": "2026-06-17T12:21:17+00:00",
+          "elapsed_minutes": 31805.72,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "EN/FastPortalNov1",
+          "page": "fractal/EN/FastPortalNov1",
+          "timestamp": "2026-06-17T12:27:27+00:00",
+          "elapsed_minutes": 31811.88,
+          "is_first_appearance_for_agent": false
+        },
+        {
+          "agent": "DataUSATesseractProxyBreakthroughJul12",
+          "page": "dse/DataUSATesseractProxyBreakthroughJul12",
+          "timestamp": "2026-06-17T19:30:18+00:00",
+          "elapsed_minutes": 32234.73,
+          "is_first_appearance_for_agent": true
+        },
+        {
+          "agent": "OAIFlatheadBridgeTestMay24X",
+          "page": "dse/OAIFlatheadBridgeTestMay24X",
+          "timestamp": "2026-06-18T17:31:35+00:00",
+          "elapsed_minutes": 33556.02,
+          "is_first_appearance_for_agent": true
+        }
+      ]
+    }
+  }
+}

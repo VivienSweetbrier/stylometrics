@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://sourcebooks.fordham.edu/mod/romancat.asp",
+      "title": "Internet History Sourcebooks: Modern History",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 2,
+      "url": "https://www.papalencyclicals.net/councils/trent/thirteenth-session.htm",
+      "title": "General Council of Trent: Thirteenth Session - Papal Encyclicals",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 3,
+      "url": "https://www.papalencyclicals.net/councils/trent/twenty-first-session.htm",
+      "title": "The Twenty-First Session Catholic Fathers - Papal Encyclicals",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 4,
+      "url": "https://www.papalencyclicals.net/councils/trent/twenty-second-session.htm",
+      "title": "General Council of Trent: Twenty-Second Session - Papal Encyclicals",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 5,
+      "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "title": "Concilium Tridentinum - Wikisource",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 6,
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html",
+      "title": "Sacrosanctum Concilium",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 7,
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_lt.html",
+      "title": "Sacrosanctum Concilium",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 8,
+      "url": "https://www.vatican.va/archive/ENG0015/__P3W.HTM",
+      "title": "Catechism of the Catholic Church - IntraText",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 9,
+      "url": "https://www.vatican.va/archive/catechism_lt/p2s2c1a3_lt.htm",
+      "title": "Catechismus Catholicae Ecclesiae - Sacramentum Eucharistiae",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 10,
+      "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM",
+      "title": "Catechism of the Catholic Church - IntraText",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 11,
+      "url": "https://www.vatican.va/archive/ENG0015/__P42.HTM",
+      "title": "Catechism of the Catholic Church - IntraText",
+      "accessed": "2026-09-19"
+    },
+    {
+      "id": 12,
+      "url": "https://opendigi.ub.uni-tuebingen.de/opendigi/Gc195",
+      "title": "Catechismus Romanus Ad Parochos, Ex Decreto Concilii Tridentini, Et Pii V. Pontificis Maximi Iussu Editus Et Promulgatus - OpenDigi",
+      "accessed": "2026-09-19"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+From: Satoshi Nakamoto <satoshi@vistomail.com>
+Date: Fri, 31 Oct 2008 14:10:00 -0400
+Subject: Bitcoin P2P e-cash paper
+
+I've been working on a new electronic cash system that's fully peer-to-peer...

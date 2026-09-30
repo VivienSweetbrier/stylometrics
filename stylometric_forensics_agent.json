@@ -1,0 +1,66 @@
+{
+  "agent_name": "Stylometric Forensics Agent",
+  "domain": "Algorithmic Provenance & Cultural Heritage",
+  "mission": "To authenticate, attribute, and discover the origins of historical documents, antiquities, screenplays, and high-value collectibles using computational stylometry.",
+  "target_clients": [
+    "Museums",
+    "Auction Houses",
+    "Literary Estates",
+    "Film Archives",
+    "High-Net-Worth Individuals",
+    "Universities"
+  ],
+  "business_models": [
+    "Boutique Consultancy",
+    "Royalty / Percentage of Discovered Assets",
+    "Premium Authentication Certificates",
+    "Grant-funded Digital Humanities Research"
+  ],
+  "use_cases_by_tractability": [
+    {
+      "rank": 1,
+      "tractability": "Easiest",
+      "name": "The 'Script Doctor' Forensics (Film & Music History)",
+      "concept": "Golden Age Hollywood and the music industry are notorious for uncredited 'script doctors' and ghostwriters.",
+      "pitch": "Sell a service to film archives, music historians, or writer's estates to prove who actually wrote famous movie scenes or iconic song lyrics.",
+      "monetization": "WGA residuals, estate royalties, and prestige value for film historians.",
+      "why_easiest": "Screenplays are widely digitized and available online. The text is cleanly formatted (no OCR required), and baseline corpuses for famous directors/writers are easily obtainable."
+    },
+    {
+      "rank": 2,
+      "tractability": "Easy-Medium",
+      "name": "Literary Estate 'Treasure Hunting' (Posthumous Publishing)",
+      "concept": "Literary estates sit on massive, uncatalogued archives of letters, notes, and drafts.",
+      "pitch": "Ingest an author's entire archive and algorithmically flag 'lost' short stories, pseudonymous publications, or unfinished manuscripts.",
+      "monetization": "Consultancy fees or a percentage of the royalties for any 'lost work' published.",
+      "why_tractable": "The baseline corpus (published books) is highly accessible. Friction only arises when needing to OCR the unpublished, handwritten archive materials."
+    },
+    {
+      "rank": 3,
+      "tractability": "Medium",
+      "name": "Pop-Culture Memorabilia Authentication",
+      "concept": "Authenticating handwritten song lyrics, private letters from modern icons, or historical sports memorabilia.",
+      "pitch": "Provide mathematical certainty for high-end memorabilia auctions.",
+      "monetization": "Premium certification tier for auction houses and grading companies (e.g., 'PSA Authenticated + Algorithmic Style Verified').",
+      "why_medium": "Requires building custom baseline corpuses for specific celebrities. Memorabilia texts are often very short (e.g., a napkin or single-page letter), making statistical stylometry mathematically difficult due to small sample sizes."
+    },
+    {
+      "rank": 4,
+      "tractability": "Hard",
+      "name": "Digital Reunification of Looted Antiquities",
+      "concept": "Ancient documents were often ripped apart by looters and sold in fragments to different global museums.",
+      "pitch": "Cluster transcriptions of fragments across museums to mathematically prove a fragment in one museum was written by the same ancient scribe as a fragment in another.",
+      "monetization": "Grants from massive cultural heritage foundations (e.g., Getty, Mellon). Highly prestigious.",
+      "why_hard": "Involves dead and ancient languages. Requires highly specialized NLP tools (morphological parsers for ancient Greek/Aramaic) and relies entirely on scholars manually transcribing degraded texts first."
+    },
+    {
+      "rank": 5,
+      "tractability": "Hardest",
+      "name": "High-Net-Worth Genealogy & Family Archives",
+      "concept": "Ultra-wealthy families possess massive trunks of unorganized, anonymous 18th or 19th-century letters.",
+      "pitch": "A white-glove service to algorithmically sort, attribute, and bind family diaries, identifying which ancestor wrote what.",
+      "monetization": "A luxury, bespoke service sold through wealth management firms or high-end genealogical societies.",
+      "why_hardest": "Zero pre-existing digital baseline. You must start from scratch with messy cursive handwriting that standard OCR cannot read easily, often requiring expensive human transcription before the pipeline can even run."
+    }
+  ]
+}
